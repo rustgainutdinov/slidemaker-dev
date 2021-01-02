@@ -6,11 +6,11 @@ import { TextContainers } from "./textContainers";
 export class Content extends Component {
 	render() {
 		return (
-			<div>
+			<svg width={1000} height={500}>
 				<Circles />
 				<TextContainers />
 				<Rectangles />
-			</div>
+			</svg>
 		);
 	}
 }

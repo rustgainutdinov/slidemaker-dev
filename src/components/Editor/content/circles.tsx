@@ -20,12 +20,12 @@ export const Circles: React.FC = () => {
 	}
 	console.log(circles[0]);
 	return (
-		<svg width={1000} height={1000}>
+		<>
 			{circles.map((circle) =>
 				<circle key={circle.uuid} cx={circle.position.x} cy={circle.position.y} r={circle.radius}
 					strokeWidth={circle.border.width}
 					stroke={circle.border.color} fill={circle.background} />
 			)}
-		</svg>
+		</>
 	);
 };

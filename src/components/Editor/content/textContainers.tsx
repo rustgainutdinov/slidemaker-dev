@@ -19,10 +19,10 @@ export const TextContainers: React.FC = () => {
     }
     console.log(textContainers[0]);
     return (
-        <svg width={1000} height={1000}>
+        <>
             {textContainers.map((textContainer) =>
                 <text key={textContainer.uuid} x={textContainer.position.x} y={textContainer.position.y} fill={textContainer.richText.color}>{textContainer.richText.value}</text>
             )}
-        </svg>
+        </>
     );
 };

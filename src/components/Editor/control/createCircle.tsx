@@ -2,9 +2,9 @@ import * as React from "react";
 import {useDispatch} from "react-redux";
 import {addState} from "../../../store/Reducer/editor";
 import {RootState} from "../../../store/Reducer";
-import {useSelector} from "../Content/circles";
-import Editor from "../../../Model/Editor";
-import getEditorWithNewCircle from "../../../Methods/AddContent/CreateCircle";
+import {useSelector} from "../content/circles";
+import Editor from "../../../model/Editor";
+import getEditorWithNewCircle from "../../../methods/addContent/createCircle";
 
 export const CreateCircle: React.FC = () => {
     const dispatch = useDispatch();
