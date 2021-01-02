@@ -9,11 +9,11 @@ import {Editor} from "./components/Editor";
 export const store = createStore(rootReducer, composeWithDevTools());
 
 export class App extends Component {
-	render() {
-		return (
-			<Provider store={store}>
-				<Editor/>
-			</Provider>
-		);
-	}
+    render() {
+        return (
+            <Provider store={store}>
+                <Editor/>
+            </Provider>
+        );
+    }
 }
