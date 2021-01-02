@@ -1,14 +1,14 @@
 import {Component} from "react";
-import {Content} from "./content";
+import {Contents} from "./contents";
 import {Control} from "./control";
 
 export class Editor extends Component {
-	render() {
-		return (
-			<div>
-				<Content/>
-				<Control/>
-			</div>
-		);
-	}
+    render() {
+        return (
+            <div>
+                <Contents/>
+                <Control/>
+            </div>
+        );
+    }
 }
