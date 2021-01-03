@@ -6,7 +6,7 @@ function getDefaultShape(contentType: number): Shape {
 	return {
 		...getDefaultContent(contentType),
 		border: getDefaultBorder(),
-		background: '#0000FF',
+		background: '#000000',
 	};
 }
 

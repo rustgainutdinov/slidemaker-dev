@@ -1,31 +1,19 @@
-import {createSelectorHook} from "react-redux";
-import {isRectangle} from "../../../methods/typeGuardMethods/isRectangle";
-import Rectangle from "../../../model/slide/content/shape/Rectangle";
-import {ContentList} from "../../../model/slide/Slide";
-import {RootState} from "../../../store/Reducer";
+type RectangleProps = {
+    x: number,
+    y: number,
+    widht: number,
+    height: number,
+    background: string,
+    borderWidth: number,
+    borderColor: string,
+    onClick: () => void,
+    isCurrent: boolean
+}
 
-export const useSelector = createSelectorHook<RootState>();
-
-export const Rectangles: React.FC = () => {
-    const contentList: ContentList = useSelector(
-        (state: RootState) => state.editorReducer.present.currentSlide.contentList
-    );
-    let rectangles: Rectangle[] = [];
-    for (const key in contentList) {
-        const content = contentList[key];
-        if (isRectangle(content)) {
-            rectangles.push(content)
-        }
-    }
-    console.log(rectangles[0]);
+export const Rectangle = ({ x, y, widht, height, borderColor, borderWidth, background, onClick }: RectangleProps) => {
     return (
-        <>
-            {rectangles.map((rectangle) =>
-                <rect key={rectangle.uuid} x={rectangle.bottomRightCoordinate.x} y={rectangle.bottomRightCoordinate.y}
-                      width={rectangle.rectangleSize.width} height={rectangle.rectangleSize.height}
-                      strokeWidth={rectangle.border.width} stroke={rectangle.border.color}
-                      fill={rectangle.background}/>
-            )}
-        </>
+        <rect x={x} y={y} width={widht} height={height}
+            strokeWidth={borderWidth} 
+            stroke={borderColor} fill={background} onClick={onClick} />
     );
 };

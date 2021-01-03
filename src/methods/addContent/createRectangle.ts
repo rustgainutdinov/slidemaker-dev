@@ -7,8 +7,6 @@ import getDefaultRectangleSize from "./getParamsOfContent/getDefaultRectangleSiz
 import getDefaultShape from "./getParamsOfContent/getDefaultShape";
 
 function createRectangle(editor: Editor): Editor {
-	//TODO: ✅ попробовать деструктуризацию вместо object.assign
-	//TODO: ГЛЕБ, сделай создание всех контентов по образу и подобию этого
 	const rectangle: Rectangle = {
 		...getDefaultShape(ContentType.Rectangle),
 		bottomRightCoordinate: getDefaultPosition(),

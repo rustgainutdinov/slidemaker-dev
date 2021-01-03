@@ -1,28 +1,15 @@
-import { createSelectorHook } from "react-redux";
-import { isTextContainer } from "../../../methods/typeGuardMethods/isTextContainer";
-import TextContainer from "../../../model/slide/content/TextContainer";
-import { ContentList } from "../../../model/slide/Slide";
-import { RootState } from "../../../store/Reducer";
+type TextContainerProps = {
+    x: number,
+    y: number,
+    color: string,
+    value: string,
+    onClick: () => void,
+    isCurrent: boolean
+}
 
-export const useSelector = createSelectorHook<RootState>();
-
-export const TextContainers: React.FC = () => {
-    const contentList: ContentList = useSelector(
-        (state: RootState) => state.editorReducer.present.currentSlide.contentList
-    );
-    let textContainers: TextContainer[] = [];
-    for (const key in contentList) {
-        const content = contentList[key];
-        if (isTextContainer(content)) {
-            textContainers.push(content)
-        }
-    }
-    console.log(textContainers[0]);
+export const TextContainer = ({ x, y, color, value, onClick }: TextContainerProps) => {
     return (
-        <>
-            {textContainers.map((textContainer) =>
-                <text key={textContainer.uuid} x={textContainer.position.x} y={textContainer.position.y} fill={textContainer.richText.color}>{textContainer.richText.value}</text>
-            )}
-        </>
+        <text x={x} y={y} fill={color}
+            onClick={onClick} >{value}</text>
     );
 };
