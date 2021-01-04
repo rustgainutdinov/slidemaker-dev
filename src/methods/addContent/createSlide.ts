@@ -6,6 +6,7 @@ function getDefaultSlide(editor: Editor): Editor {
         slideId: editor.currentSlide.slideId + 1,
         background: 'ffffff',
         contentList: {},
+        svgDemo: "",
         animation: 1
     };
 
