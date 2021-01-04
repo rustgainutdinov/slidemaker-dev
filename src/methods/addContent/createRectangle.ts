@@ -10,6 +10,7 @@ function createRectangle(editor: Editor): Editor {
         ...getDefaultShape(ContentType.Rectangle),
         bottomRightCoordinate: getDefaultPosition(),
         rectangleSize: getDefaultRectangleSize(),
+        layer: editor.currentContent.layer + 1,
         rectangle: undefined
     };
 
