@@ -1,6 +1,5 @@
 import Content from "./content/Content"
 
-
 export type ContentList = {
 	[key: string]: Content
 }

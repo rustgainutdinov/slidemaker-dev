@@ -6,7 +6,7 @@ function isRectangle(content: Content): content is Rectangle {
 	return 'rectangle' in content;
 }
 
-function updateRectangleSiz(editor: Editor, newWidth: number, newHheight: number) {
+function updateRectangleSize(editor: Editor, newWidth: number, newHheight: number) {
 	if (!isRectangle(editor.currentContent)) {
 		return
 	}
@@ -25,4 +25,4 @@ function updateRectangleSiz(editor: Editor, newWidth: number, newHheight: number
 	};
 }
 
-export default updateRectangleSiz
+export default updateRectangleSize
