@@ -1,9 +1,9 @@
 import Editor from "../../model/Editor";
 
-function changeCurrentContent(editor: Editor, newSlideId: string) {
+function changeCurrentContent(editor: Editor, newContentUuid: string) {
 	return {
 		...editor,
-		currentContent: editor.currentSlide.contentList[newSlideId]
+		currentContent: editor.currentSlide.contentList[newContentUuid]
 	}
 }
 

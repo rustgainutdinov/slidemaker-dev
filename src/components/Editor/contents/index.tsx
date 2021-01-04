@@ -10,6 +10,7 @@ import { isRectangle } from "../../../methods/typeGuardMethods/isRectangle";
 import { Rectangle } from "./rectangles";
 import { isTextContainer } from "../../../methods/typeGuardMethods/isTextContainer";
 import { TextContainer } from "./textContainers";
+import changeCurrentContent from "../../../methods/updateContent/changeCurrentContent";
 
 export const Contents: React.FC = () => {
     const presentEditor: Editor = useSelector(
@@ -17,11 +18,8 @@ export const Contents: React.FC = () => {
     );
 
     const dispatch = useDispatch();
-    const changeCurrentContent = (uuid: string): object => {
-        return dispatch(addState({
-            ...presentEditor,
-            currentContent: presentEditor.currentSlide.contentList[uuid]
-        }));
+    const changeCurrentContentAction = (uuid: string): object => {
+        return dispatch(addState(changeCurrentContent(presentEditor, uuid)));
     };
 
     let sortedContents = [];
@@ -32,7 +30,7 @@ export const Contents: React.FC = () => {
         layer++;
     }
     const drawContent = (content: Content) => {
-        const onClickCallback = () => changeCurrentContent(content.uuid);
+        const onClickCallback = () => changeCurrentContentAction(content.uuid);
         if (isCircle(content)) {
             return <Circle x={content.position.x} y={content.position.y} radius={content.radius}
                 background={content.background} borderWidth={content.border.width}
