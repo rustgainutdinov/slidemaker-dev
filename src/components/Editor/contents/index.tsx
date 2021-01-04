@@ -18,17 +18,18 @@ export const Contents: React.FC = () => {
 
     const dispatch = useDispatch();
     const changeCurrentContent = (uuid: string): object => {
-        console.log(uuid);
         return dispatch(addState({
             ...presentEditor,
             currentContent: presentEditor.currentSlide.contentList[uuid]
         }));
-    }
+    };
 
     let sortedContents = [];
+    let layer = 0;
     for (const key in presentEditor.currentSlide.contentList) {
         const content = presentEditor.currentSlide.contentList[key];
-        sortedContents[content.layer] = content;
+        sortedContents[layer] = content; //content.layer
+        layer++;
     }
     const drawContent = (content: Content) => {
         const onClickCallback = () => changeCurrentContent(content.uuid);
@@ -49,7 +50,6 @@ export const Contents: React.FC = () => {
                 color={content.richText.color} key={content.uuid} isCurrent={true} onClick={onClickCallback.bind(content)} value={content.richText.value} />
         }
     };
-    drawContent(sortedContents[0]);
     return (
         <svg width={1000} height={500}>
             {sortedContents.map(drawContent)}
