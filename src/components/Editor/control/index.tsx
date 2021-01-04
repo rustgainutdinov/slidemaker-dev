@@ -7,9 +7,11 @@ export class Control extends Component {
     render() {
         return (
             <div>
-                <CreateRectangle />
-                <CreateCircle />
-                <CreateTextContainer />
+                <ul className="dropdown">
+                    <li><a href="#"><CreateRectangle /></a></li>
+                    <li><a href="#"><CreateCircle /></a></li>
+                    <li><a href="#"><CreateTextContainer /></a></li>
+                </ul>
             </div>
         );
     }

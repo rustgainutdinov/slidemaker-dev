@@ -51,7 +51,7 @@ export const Contents: React.FC = () => {
         }
     };
     return (
-        <svg width={1000} height={500}>
+        <svg width={1000} height="85vh">
             {sortedContents.map(drawContent)}
         </svg>
     );
