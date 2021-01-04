@@ -14,13 +14,24 @@ export const UpdateCircle = ({presentEditor, currentCircle}: updateCircleProps) 
 
     const handleRadiusChange = (event: any) => updateStateUpdatingCircle({
         ...currentCircle,
-        radius: event.target.value
+        radius: +event.target.value
+    });
+    const handleBorderWidthChange = (event: any) => updateStateUpdatingCircle({
+        ...currentCircle,
+        border: {
+            ...currentCircle.border,
+            width: +event.target.value
+        }
     });
     return (
         <div>
             <label>
                 Радиус:
-                <input type="text" onChange={handleRadiusChange}/>
+                <input type="text" onChange={handleRadiusChange} value={currentCircle.radius}/>
+            </label><br/>
+            <label>
+                Ширина обводки:
+                <input type="text" onChange={handleBorderWidthChange} value={currentCircle.border.width}/>
             </label>
         </div>
     )

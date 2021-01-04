@@ -3,7 +3,7 @@ import {CreateCircle} from './createCircle'
 import {CreateRectangle} from './createRectangle'
 import {CreateTextContainer} from './createTextContainer'
 
-export class Control extends Component {
+export class CreateControlElements extends Component {
     render() {
         return (
             <div>

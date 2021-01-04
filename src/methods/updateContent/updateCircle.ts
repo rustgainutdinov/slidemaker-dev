@@ -14,6 +14,13 @@ function updateCircle(editor: Editor, newCircle: Content): Editor {
         ...editor,
         currentContent: {
             ...newCircle
+        },
+        currentSlide: {
+            ...editor.currentSlide,
+            contentList: {
+                ...editor.currentSlide.contentList,
+                [newCircle.uuid]: newCircle
+            }
         }
     };
 }
