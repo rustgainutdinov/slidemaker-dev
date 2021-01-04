@@ -48,9 +48,8 @@ export const Contents: React.FC = () => {
                                   onClick={onClickCallback.bind(content)} value={content.richText.value}/>
         }
     };
-    return (
-        <svg width={1000} height={500}>
-            {sortedContents.map(drawContent)}
-        </svg>
-    );
+    return (<svg width={1000} height={500} id={"currentSlideContent"}>
+        {sortedContents.map(drawContent)}
+    </svg>);
+
 };
