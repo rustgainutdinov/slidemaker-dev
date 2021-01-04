@@ -12,12 +12,12 @@ export class Editor extends Component {
                             <p className="logo">Y</p>
                         </div>
                         <div className="tools_panel">
-                            <h1 className="title">Самая лучшая презентация</h1>
+                            <h1 className="title">РЎР°РјР°СЏ Р»СѓС‡С€Р°СЏ РїСЂРµР·РµРЅС‚Р°С†РёСЏ</h1>
                             <div className="tools">
-                                <li><a href="#" className="tools_button">Файл</a></li>
-                                <li><a href="#" className="tools_button">Правки</a></li>
-                                <li><a href="#" className="tools_button">Вид</a></li>
-                                <li><a href="#" className="tools_button">Вставка</a>
+                                <li><a href="#" className="tools_button">Р¤Р°Р№Р»</a></li>
+                                <li><a href="#" className="tools_button">РџСЂР°РІРєРё</a></li>
+                                <li><a href="#" className="tools_button">Р’РёРґ</a></li>
+                                <li><a href="#" className="tools_button">Р’СЃС‚Р°РІРєР°</a>
                                     <ul className="dropdown">
                                         <Control/>
                                     </ul>
@@ -25,88 +25,88 @@ export class Editor extends Component {
                             </div>
                         </div>
                         <div className="edit_panel">
-                            <h2 className="edit_title">Параметры элементов</h2>
+                            <h2 className="edit_title">РџР°СЂР°РјРµС‚СЂС‹ СЌР»РµРјРµРЅС‚РѕРІ</h2>
                             <div className="edit_tools_box">
                                 <div className="edit_tools">
                                     <li>
-                                        <a href="#edit_params_box_rect" className="edit_button">Квадрат</a>
+                                        <a href="#edit_params_box_rect" className="edit_button">РљРІР°РґСЂР°С‚</a>
                                         <div id="edit_params_box_rect">
                                             <div id="popup_rect">
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Ширина</h3>
+                                                    <h3 className="param_name">РЁРёСЂРёРЅР°</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Высота</h3>
+                                                    <h3 className="param_name">Р’С‹СЃРѕС‚Р°</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
-                                                <a href="#" className="close">Применить</a>
+                                                <a href="#" className="close">РџСЂРёРјРµРЅРёС‚СЊ</a>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#edit_params_box_circle" className="edit_button">Круг</a>
+                                        <a href="#edit_params_box_circle" className="edit_button">РљСЂСѓРі</a>
                                         <div id="edit_params_box_circle">
                                             <div id="popup_circle">
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Радиус</h3>
+                                                    <h3 className="param_name">Р Р°РґРёСѓСЃ</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
-                                                <a href="#" className="close">Применить</a>
+                                                <a href="#" className="close">РџСЂРёРјРµРЅРёС‚СЊ</a>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#edit_params_box_color" className="edit_button">Цвет</a>
+                                        <a href="#edit_params_box_color" className="edit_button">Р¦РІРµС‚</a>
                                         <div id="edit_params_box_color">
                                             <div id="popup_color">
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Изменить цвет</h3>
+                                                    <h3 className="param_name">РР·РјРµРЅРёС‚СЊ С†РІРµС‚</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
-                                                <a href="#" className="close">Применить</a>
+                                                <a href="#" className="close">РџСЂРёРјРµРЅРёС‚СЊ</a>
                                             </div>
                                         </div>
                                     </li>
                                 </div>
                                 <div className="edit_tools">
                                     <li>
-                                        <a href="#edit_params_box_border" className="edit_button">Бордер</a>
+                                        <a href="#edit_params_box_border" className="edit_button">Р‘РѕСЂРґРµСЂ</a>
                                         <div id="edit_params_box_border">
                                             <div id="popup_border">
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Ширина</h3>
+                                                    <h3 className="param_name">РЁРёСЂРёРЅР°</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Цвет</h3>
+                                                    <h3 className="param_name">Р¦РІРµС‚</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
-                                                <a href="#" className="close">Применить</a>
+                                                <a href="#" className="close">РџСЂРёРјРµРЅРёС‚СЊ</a>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#edit_params_box_text" className="edit_button">Текст</a>
+                                        <a href="#edit_params_box_text" className="edit_button">РўРµРєСЃС‚</a>
                                         <div id="edit_params_box_text">
                                             <div id="popup_text">
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Цвет</h3>
+                                                    <h3 className="param_name">Р¦РІРµС‚</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Размер</h3>
+                                                    <h3 className="param_name">Р Р°Р·РјРµСЂ</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Содержание</h3>
+                                                    <h3 className="param_name">РЎРѕРґРµСЂР¶Р°РЅРёРµ</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <div className="params_field">
-                                                    <h3 className="param_name">Ширина</h3>
+                                                    <h3 className="param_name">РЁРёСЂРёРЅР°</h3>
                                                     <input type="text" className="param_input_label" />
                                                 </div>
-                                                <a href="#" className="close">Применить</a>
+                                                <a href="#" className="close">РџСЂРёРјРµРЅРёС‚СЊ</a>
                                             </div>
                                         </div>
                                     </li>
