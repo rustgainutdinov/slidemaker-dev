@@ -8,7 +8,9 @@ function createTextContainer(editor: Editor): Editor {
 
     const textContainer: TextContainer = {
         ...getDefaultContent(ContentType.TextContainer),
-        ...getDefaultTextContainer()
+        ...getDefaultTextContainer(),
+        layer: editor.currentContent.layer + 1,
+        textContainer: undefined
     };
     return {
         ...editor,

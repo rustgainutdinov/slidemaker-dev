@@ -17,9 +17,10 @@ function getDefaultPresentation(): Presentation {
 		textContainer: undefined
 	};
 	const slide: Slide = {
-		slideId: 1,
+		slideId: 0,
 		background: "#fff",
 		animation: 1,
+		svgDemo: "",
 		contentList: {
 			[uuid]: firstContent
 		}

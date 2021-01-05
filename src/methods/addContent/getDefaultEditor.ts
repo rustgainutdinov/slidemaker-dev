@@ -15,6 +15,7 @@ export default function getDefaultEditor(): Editor {
         slideId: 1,
         background: "#fff",
         animation: 1,
+        svgDemo: "",
         contentList: {
             [content.uuid]: content,
         }

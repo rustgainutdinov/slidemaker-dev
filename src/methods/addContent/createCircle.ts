@@ -7,7 +7,8 @@ function createCircle(editor: Editor): Editor {
     const circle: Circle = {
         ...getDefaultShape(ContentType.Circle),
         radius: 100,
-        circle: undefined
+        circle: undefined,
+        layer: editor.currentContent.layer + 1
     };
     return {
         ...editor,
