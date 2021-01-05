@@ -12,7 +12,7 @@ export default function getDefaultEditor(): Editor {
         }
     };
     const slide: Slide = {
-        slideId: 1,
+        slideId: 0,
         background: "#fff",
         animation: 1,
         svgDemo: "",

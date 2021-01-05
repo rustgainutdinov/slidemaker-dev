@@ -1,18 +1,27 @@
 import Editor from "../../model/Editor";
-import { Slide } from "../../model/slide/Slide";
+import {Slide} from "../../model/slide/Slide";
+import {getDefaultTextContainer} from "./getParamsOfContent/getDefaultTextContainer";
 
 function getDefaultSlide(editor: Editor): Editor {
+    const defaultContent = getDefaultTextContainer();
     const slide: Slide = {
-        slideId: editor.currentSlide.slideId + 1,
+        slideId: editor.currentPresentation.sliderList.length,
         background: 'ffffff',
-        contentList: {},
+        contentList: {
+            [defaultContent.uuid]: defaultContent
+        },
         svgDemo: "",
         animation: 1
     };
 
     return {
         ...editor,
-        currentSlide: slide
+        currentPresentation: {
+            ...editor.currentPresentation,
+            sliderList: [...editor.currentPresentation.sliderList, slide]
+        },
+        currentSlide: slide,
+        currentContent: defaultContent
     };
 }
 
