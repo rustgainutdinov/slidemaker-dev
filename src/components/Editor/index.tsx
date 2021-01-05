@@ -1,6 +1,7 @@
-import {Component} from "react";
-import {Contents} from "./contents";
-import {CreateControlElements} from "./control/createControlElements";
+import React, { Component } from "react";
+import { Contents } from "./contents";
+import { Control } from "./control";
+import { UpdateControlElements } from "./control/updateControlElements";
 
 export class Editor extends Component {
     render() {
@@ -18,46 +19,26 @@ export class Editor extends Component {
                                 <li><a href="#" className="tools_button">Правки</a></li>
                                 <li><a href="#" className="tools_button">Вид</a></li>
                                 <li><a href="#" className="tools_button">Вставка</a>
-
                                     <ul className="dropdown">
-                                        <CreateControlElements/>
+                                        <Control />
                                     </ul>
                                 </li>
+                                <li>
+                                    <a href="#edit_params" className="tools_button">Изменить</a>
+                                    <UpdateControlElements />
+                                </li>
+
                             </div>
                         </div>
-                        <div className="edit_panel">
+                        {/* <div className="edit_panel">
                             <h2 className="edit_title">Параметры элементов</h2>
                             <div className="edit_tools_box">
                                 <div className="edit_tools">
                                     <li>
-                                        <a href="#edit_params_box_rect" className="edit_button">Квадрат</a>
-                                        <div id="edit_params_box_rect">
-                                            <div id="popup_rect">
-                                                <div className="params_field">
-                                                    <h3 className="param_name">Ширина</h3>
-                                                    <input type="text" className="param_input_label" />
-                                                </div>
-                                                <div className="params_field">
-                                                    <h3 className="param_name">Высота</h3>
-                                                    <input type="text" className="param_input_label" />
-                                                </div>
-                                                <a href="#" className="close">Применить</a>
-                                            </div>
-                                        </div>
+                                        <a href="#edit_params" className="edit_button">Редактировать элемент</a>
+                                        <UpdateControlElements/>
                                     </li>
-                                    <li>
-                                        <a href="#edit_params_box_circle" className="edit_button">Круг</a>
-                                        <div id="edit_params_box_circle">
-                                            <div id="popup_circle">
-                                                <div className="params_field">
-                                                    <h3 className="param_name">Радиус</h3>
-                                                    <input type="text" className="param_input_label" />
-                                                </div>
-                                                <a href="#" className="close">Применить</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
+                                     <li>
                                         <a href="#edit_params_box_color" className="edit_button">Цвет</a>
                                         <div id="edit_params_box_color">
                                             <div id="popup_color">
@@ -68,52 +49,10 @@ export class Editor extends Component {
                                                 <a href="#" className="close">Применить</a>
                                             </div>
                                         </div>
-                                    </li>
-                                </div>
-                                <div className="edit_tools">
-                                    <li>
-                                        <a href="#edit_params_box_border" className="edit_button">Бордер</a>
-                                        <div id="edit_params_box_border">
-                                            <div id="popup_border">
-                                                <div className="params_field">
-                                                    <h3 className="param_name">Ширина</h3>
-                                                    <input type="text" className="param_input_label" />
-                                                </div>
-                                                <div className="params_field">
-                                                    <h3 className="param_name">Цвет</h3>
-                                                    <input type="text" className="param_input_label" />
-                                                </div>
-                                                <a href="#" className="close">Применить</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="#edit_params_box_text" className="edit_button">Текст</a>
-                                        <div id="edit_params_box_text">
-                                            <div id="popup_text">
-                                                <div className="params_field">
-                                                    <h3 className="param_name">Цвет</h3>
-                                                    <input type="text" className="param_input_label" />
-                                                </div>
-                                                <div className="params_field">
-                                                    <h3 className="param_name">Размер</h3>
-                                                    <input type="text" className="param_input_label" />
-                                                </div>
-                                                <div className="params_field">
-                                                    <h3 className="param_name">Содержание</h3>
-                                                    <input type="text" className="param_input_label" />
-                                                </div>
-                                                <div className="params_field">
-                                                    <h3 className="param_name">Ширина</h3>
-                                                    <input type="text" className="param_input_label" />
-                                                </div>
-                                                <a href="#" className="close">Применить</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    </li> 
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
                 <section>
@@ -150,7 +89,7 @@ export class Editor extends Component {
                             </div>
                         </div>
                         <div className="slide_view">
-                            <Contents/>
+                            <Contents />
                         </div>
                     </div>
                 </section>

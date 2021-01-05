@@ -1,6 +1,6 @@
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import Editor from "../../../model/Editor";
-import {addState} from "../../../store/Reducer/editor";
+import { addState } from "../../../store/Reducer/editor";
 import Rectangle from "../../../model/slide/content/shape/Rectangle";
 import updateRectangle from "../../../methods/updateContent/updateRectangle";
 
@@ -8,7 +8,7 @@ type updateRectangleProps = {
     presentEditor: Editor, currentRectangle: Rectangle
 }
 
-export const UpdateRectangle = ({presentEditor, currentRectangle}: updateRectangleProps) => {
+export const UpdateRectangle = ({ presentEditor, currentRectangle }: updateRectangleProps) => {
     const dispatch = useDispatch();
     const updateStateUpdatingRectangle = (rectangle: Rectangle) => dispatch(addState(updateRectangle(presentEditor, rectangle)));
 
@@ -67,38 +67,43 @@ export const UpdateRectangle = ({presentEditor, currentRectangle}: updateRectang
     });
     return (
         <div>
-            <label>
-                Фон:
-                <input type="text" onChange={handleBackgroundChange} value={currentRectangle.background}/>
-            </label><br/>
-            <label>
-                Ширина обводки:
-                <input type="text" onChange={handleBorderWidthChange} value={currentRectangle.border.width}/>
-            </label><br/>
-            <label>
-                Цвет обводки:
-                <input type="text" onChange={handleBorderColorChange} value={currentRectangle.border.color}/>
-            </label><br/>
-            <label>
-                Тип обводки:
-                <input type="text" onChange={handleBorderTypeChange} value={currentRectangle.border.type}/>
-            </label><br/>
-            <label>
-                Позиция X:
-                <input type="text" onChange={handlePositionXChange} value={currentRectangle.position.x}/> 
-            </label><br/>
-            <label>
-                Позиция Y:
-                <input type="text" onChange={handlePositionYChange} value={currentRectangle.position.y}/> 
-            </label><br/>
-            <label>
-                Высота:
-                <input type="text" onChange={handleRectangleSizeHeightChange} value={currentRectangle.rectangleSize.height}/> 
-            </label><br/>
-            <label>
-                Ширина:
-                <input type="text" onChange={handleRectangleSizeWidthChange} value={currentRectangle.rectangleSize.width}/> 
-            </label>
+            <div id="edit_params">
+                <div id="popup_rect">
+                    <div className="params_field">
+                        <h3 className="param_name">Ширина</h3>
+                        <input type="text" className="param_input_label" onChange={handleRectangleSizeWidthChange} value={currentRectangle.rectangleSize.width} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Высота</h3>
+                        <input type="text" className="param_input_label" onChange={handleRectangleSizeHeightChange} value={currentRectangle.rectangleSize.height} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Фон</h3>
+                        <input type="text" className="param_input_label" onChange={handleBackgroundChange} value={currentRectangle.background} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Ширина обводки</h3>
+                        <input type="text" className="param_input_label" onChange={handleBorderWidthChange} value={currentRectangle.border.width} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Цвет обводки</h3>
+                        <input type="text" className="param_input_label" onChange={handleBorderColorChange} value={currentRectangle.border.color} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Тип обводки</h3>
+                        <input type="text" className="param_input_label" onChange={handleBorderTypeChange} value={currentRectangle.border.type} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Позиция X</h3>
+                        <input type="text" className="param_input_label" onChange={handlePositionXChange} value={currentRectangle.position.x} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Позиция Y</h3>
+                        <input type="text" className="param_input_label" onChange={handlePositionYChange} value={currentRectangle.position.y} />
+                    </div>
+                    <a href="#" className="close">Применить</a>
+                </div>
+            </div>
         </div>
     )
 };

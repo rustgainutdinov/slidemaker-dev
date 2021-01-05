@@ -1,6 +1,6 @@
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import Editor from "../../../model/Editor";
-import {addState} from "../../../store/Reducer/editor";
+import { addState } from "../../../store/Reducer/editor";
 import updateTextContainer from "../../../methods/updateContent/updateTextContainer";
 import TextContainer from "../../../model/slide/content/TextContainer";
 
@@ -8,7 +8,7 @@ type updateTextContainerProps = {
     presentEditor: Editor, currentTextContainer: TextContainer
 }
 
-export const UpdateTextContainer = ({presentEditor, currentTextContainer}: updateTextContainerProps) => {
+export const UpdateTextContainer = ({ presentEditor, currentTextContainer }: updateTextContainerProps) => {
     const dispatch = useDispatch();
     const updateStateUpdatingTextContainer = (textContainer: TextContainer) => dispatch(addState(updateTextContainer(presentEditor, textContainer)));
 
@@ -53,30 +53,35 @@ export const UpdateTextContainer = ({presentEditor, currentTextContainer}: updat
     });
     return (
         <div>
-            <label>
-                Ширина:
-                <input type="text" onChange={handleWidthChange} value={currentTextContainer.width}/>
-            </label><br/>
-            <label>
-                Позиция X:
-                <input type="text" onChange={handlePositionXChange} value={currentTextContainer.position.x}/> 
-            </label><br/>
-            <label>
-                Позиция Y:
-                <input type="text" onChange={handlePositionYChange} value={currentTextContainer.position.y}/> 
-            </label><br/>
-            <label>
-                Цвет:
-                <input type="text" onChange={handleRichTextColorChange} value={currentTextContainer.richText.color}/> 
-            </label><br/>
-            <label>
-                Cтиль:
-                <input type="text" onChange={handleRichTextFontChange} value={currentTextContainer.richText.font}/> 
-            </label><br/>
-            <label>
-                Текст:
-                <input type="text" onChange={handleRichTextValueChange} value={currentTextContainer.richText.value}/> 
-            </label><br/>
+            <div id="edit_params">
+                <div id="popup_text">
+                    <div className="params_field">
+                        <h3 className="param_name">Цвет</h3>
+                        <input type="text" className="param_input_label" onChange={handleRichTextColorChange} value={currentTextContainer.richText.color} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Текст</h3>
+                        <input type="text" className="param_input_label" onChange={handleRichTextValueChange} value={currentTextContainer.richText.value} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Ширина</h3>
+                        <input type="text" className="param_input_label" onChange={handleWidthChange} value={currentTextContainer.width} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Стиль</h3>
+                        <input type="text" className="param_input_label" onChange={handleRichTextFontChange} value={currentTextContainer.richText.font} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Позиция X</h3>
+                        <input type="text" className="param_input_label" onChange={handlePositionXChange} value={currentTextContainer.position.x} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Позиция Y</h3>
+                        <input type="text" className="param_input_label" onChange={handlePositionYChange} value={currentTextContainer.position.y} />
+                    </div>
+                    <a href="#" className="close">Применить</a>
+                </div>
+            </div>
         </div>
     )
 };
