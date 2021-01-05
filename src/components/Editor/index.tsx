@@ -1,6 +1,6 @@
-
+import {Component} from "react";
+import {Contents} from "./contents";
 import {CreateControlElements} from "./control/createControlElements";
-import {UpdateControlElements} from "./control/updateControlElements";
 
 export class Editor extends Component {
     render() {
@@ -12,19 +12,29 @@ export class Editor extends Component {
                             <p className="logo">Y</p>
                         </div>
                         <div className="tools_panel">
+<<<<<<< Updated upstream
                             <h1 className="title">Самая лучшая презентация</h1>
                             <div className="tools">
                                 <li><a href="#" className="tools_button">Файл</a></li>
                                 <li><a href="#" className="tools_button">Правки</a></li>
                                 <li><a href="#" className="tools_button">Вид</a></li>
                                 <li><a href="#" className="tools_button">Вставка</a>
+=======
+                            <h1 className="title">����� ������ �����������</h1>
+                            <div className="tools">
+                                <li><a href="#" className="tools_button">����</a></li>
+                                <li><a href="#" className="tools_button">������</a></li>
+                                <li><a href="#" className="tools_button">���</a></li>
+                                <li><a href="#" className="tools_button">�������</a>
+>>>>>>> Stashed changes
                                     <ul className="dropdown">
-                                        <Control/>
+                                        <CreateControlElements/>
                                     </ul>
                                 </li>
                             </div>
                         </div>
                         <div className="edit_panel">
+<<<<<<< Updated upstream
                             <h2 className="edit_title">Параметры элементов</h2>
                             <div className="edit_tools_box">
                                 <div className="edit_tools">
@@ -41,10 +51,29 @@ export class Editor extends Component {
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <a href="#" className="close">Применить</a>
+=======
+                            <h2 className="edit_title">��������� ���������</h2>
+                            <div className="edit_tools_box">
+                                <div className="edit_tools">
+                                    <li>
+                                        <a href="#edit_params_box_rect" className="edit_button">�������</a>
+                                        <div id="edit_params_box_rect">
+                                            <div id="popup_rect">
+                                                <div className="params_field">
+                                                    <h3 className="param_name">������</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <div className="params_field">
+                                                    <h3 className="param_name">������</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <a href="#" className="close">���������</a>
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </li>
                                     <li>
+<<<<<<< Updated upstream
                                         <a href="#edit_params_box_circle" className="edit_button">Круг</a>
                                         <div id="edit_params_box_circle">
                                             <div id="popup_circle">
@@ -53,10 +82,21 @@ export class Editor extends Component {
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <a href="#" className="close">Применить</a>
+=======
+                                        <a href="#edit_params_box_circle" className="edit_button">����</a>
+                                        <div id="edit_params_box_circle">
+                                            <div id="popup_circle">
+                                                <div className="params_field">
+                                                    <h3 className="param_name">������</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <a href="#" className="close">���������</a>
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </li>
                                     <li>
+<<<<<<< Updated upstream
                                         <a href="#edit_params_box_color" className="edit_button">Цвет</a>
                                         <div id="edit_params_box_color">
                                             <div id="popup_color">
@@ -65,12 +105,23 @@ export class Editor extends Component {
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <a href="#" className="close">Применить</a>
+=======
+                                        <a href="#edit_params_box_color" className="edit_button">����</a>
+                                        <div id="edit_params_box_color">
+                                            <div id="popup_color">
+                                                <div className="params_field">
+                                                    <h3 className="param_name">�������� ����</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <a href="#" className="close">���������</a>
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </li>
                                 </div>
                                 <div className="edit_tools">
                                     <li>
+<<<<<<< Updated upstream
                                         <a href="#edit_params_box_border" className="edit_button">Бордер</a>
                                         <div id="edit_params_box_border">
                                             <div id="popup_border">
@@ -83,10 +134,25 @@ export class Editor extends Component {
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <a href="#" className="close">Применить</a>
+=======
+                                        <a href="#edit_params_box_border" className="edit_button">������</a>
+                                        <div id="edit_params_box_border">
+                                            <div id="popup_border">
+                                                <div className="params_field">
+                                                    <h3 className="param_name">������</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <div className="params_field">
+                                                    <h3 className="param_name">����</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <a href="#" className="close">���������</a>
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </li>
                                     <li>
+<<<<<<< Updated upstream
                                         <a href="#edit_params_box_text" className="edit_button">Текст</a>
                                         <div id="edit_params_box_text">
                                             <div id="popup_text">
@@ -107,6 +173,28 @@ export class Editor extends Component {
                                                     <input type="text" className="param_input_label" />
                                                 </div>
                                                 <a href="#" className="close">Применить</a>
+=======
+                                        <a href="#edit_params_box_text" className="edit_button">�����</a>
+                                        <div id="edit_params_box_text">
+                                            <div id="popup_text">
+                                                <div className="params_field">
+                                                    <h3 className="param_name">����</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <div className="params_field">
+                                                    <h3 className="param_name">������</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <div className="params_field">
+                                                    <h3 className="param_name">����������</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <div className="params_field">
+                                                    <h3 className="param_name">������</h3>
+                                                    <input type="text" className="param_input_label"/>
+                                                </div>
+                                                <a href="#" className="close">���������</a>
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </li>
