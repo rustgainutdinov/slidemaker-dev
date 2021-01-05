@@ -23,6 +23,38 @@ export const UpdateCircle = ({presentEditor, currentCircle}: updateCircleProps) 
             width: +event.target.value
         }
     });
+    const handleBorderColorChange = (event: any) => updateStateUpdatingCircle({
+        ...currentCircle,
+        border: {
+            ...currentCircle.border,
+            color: event.target.value
+        }
+    });
+    const handleBorderTypeChange = (event: any) => updateStateUpdatingCircle({
+        ...currentCircle,
+        border: {
+            ...currentCircle.border,
+            type: event.target.value
+        }
+    });
+    const handleBackgroundChange = (event: any) => updateStateUpdatingCircle({
+        ...currentCircle,
+        background: event.target.value
+    });
+    const handlePositionXChange = (event: any) => updateStateUpdatingCircle({
+        ...currentCircle,
+        position: {
+            ...currentCircle.position,
+            x: +event.target.value
+        }
+    });
+    const handlePositionYChange = (event: any) => updateStateUpdatingCircle({
+        ...currentCircle,
+        position: {
+            ...currentCircle.position,
+            y: +event.target.value
+        }
+    });
     return (
         <div>
             <label>
@@ -32,6 +64,26 @@ export const UpdateCircle = ({presentEditor, currentCircle}: updateCircleProps) 
             <label>
                 Ширина обводки:
                 <input type="text" onChange={handleBorderWidthChange} value={currentCircle.border.width}/>
+            </label><br/>
+            <label>
+                Цвет обводки:
+                <input type="text" onChange={handleBorderColorChange} value={currentCircle.border.color}/>
+            </label><br/>
+            <label>
+                Тип обводки:
+                <input type="text" onChange={handleBorderTypeChange} value={currentCircle.border.type}/>
+            </label><br/>
+            <label>
+                Фон:
+                <input type="text" onChange={handleBackgroundChange} value={currentCircle.background}/>
+            </label><br/>
+            <label>
+                Позиция X:
+                <input type="text" onChange={handlePositionXChange} value={currentCircle.position.x}/> 
+            </label><br/>
+            <label>
+                Позиция Y:
+                <input type="text" onChange={handlePositionYChange} value={currentCircle.position.y}/> 
             </label>
         </div>
     )
