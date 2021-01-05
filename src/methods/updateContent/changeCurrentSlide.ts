@@ -1,7 +1,6 @@
 import Editor from "../../model/Editor";
 
 function changeCurrentSlide(editor: Editor, slideId: number): Editor {
-    console.log(slideId);
     let newCurrentSlide = editor.currentPresentation.sliderList[slideId];
     let newCurrentContent;
     for (let key in newCurrentSlide.contentList) {

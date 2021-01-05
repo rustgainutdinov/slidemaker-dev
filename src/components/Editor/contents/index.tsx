@@ -21,6 +21,9 @@ export const Contents: React.FC = () => {
     const changeCurrentContentAction = (uuid: string): object => {
         return dispatch(addState(changeCurrentContent(presentEditor, uuid)));
     };
+    // const changeCurrentSlideSvgAction = (svg: string): object => {
+    //     return dispatch(addState(changeCurrentSlideSvg(presentEditor, svg)));
+    // };
 
     let sortedContents = [];
     for (const key in presentEditor.currentSlide.contentList) {
@@ -48,6 +51,12 @@ export const Contents: React.FC = () => {
                                   onClick={onClickCallback.bind(content)} value={content.richText.value}/>
         }
     };
+
+    // useEffect(() => {
+    //     console.log(document.getElementById("currentSlideContent"));
+    //     changeCurrentSlideSvgAction("qq");
+    // });
+
     return (
         <svg width={1000} height="75vh" id={"currentSlideContent"}>
             {sortedContents.map(drawContent)}

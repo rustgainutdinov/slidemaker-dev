@@ -14,6 +14,7 @@ export const UpdateControlElements: React.FC = () => {
     const presentEditor: Editor = useSelector(
         (state: RootState) => state.editorReducer.present
     );
+
     const getUpdateContentControlElements = (presentEditor: Editor) => {
         let content: Content = presentEditor.currentContent;
         if (isCircle(content)) {
