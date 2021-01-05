@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Contents } from "./contents";
 import { Control } from "./control";
 import { UpdateControlElements } from "./control/updateControlElements";
-import {Previews} from "./previews";
+import { Previews } from "./previews";
 
 export class Editor extends Component {
     render() {
@@ -23,6 +23,10 @@ export class Editor extends Component {
                                     <ul className="dropdown">
                                         <Control />
                                     </ul>
+                                </li>
+                                <li>
+                                    <a href="#edit_params" className="tools_button">Изменить</a>
+                                    <UpdateControlElements />
                                 </li>
                             </div>
                         </div>
@@ -53,7 +57,7 @@ export class Editor extends Component {
                 </section>
                 <section>
                     <div className="working_space">
-                        <Previews/>
+                        <Previews />
                         <div className="slide_view">
                             <Contents />
                         </div>
