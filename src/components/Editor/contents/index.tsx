@@ -36,7 +36,7 @@ export const Contents: React.FC = () => {
                            isCurrent={true} key={content.uuid}/>
         }
         if (isRectangle(content)) {
-            return <Rectangle x={content.bottomRightCoordinate.x} y={content.bottomRightCoordinate.y}
+            return <Rectangle x={content.position.x} y={content.position.y}
                               widht={content.rectangleSize.width} height={content.rectangleSize.height}
                               background={content.background} borderWidth={content.border.width}
                               borderColor={content.border.color}
