@@ -3,7 +3,7 @@ type Presentation = {
 	name: string,
 	date: Date,
 	author: string,
-	sliderList: Array<Slide>
+	slides: Array<Slide>
 };
 
 export default Presentation

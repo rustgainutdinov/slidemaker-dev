@@ -17,10 +17,11 @@ export const Previews = () => {
     return (
         <div className="slides_preview">
             <div className="slides">
-                {presentEditor.currentPresentation.sliderList.map((slide: Slide) => {
+                {presentEditor.currentPresentation.slides.map((slide: Slide) => {
                     const onSlideClickCallback = () => updateStateChangingSlide(slide.slideId);
-                    return <div className="slide_wrapper" onClick={onSlideClickCallback.bind(slide)}
-                                key={slide.slideId}>
+                    return
+                    <div className="slide_wrapper" onClick={onSlideClickCallback.bind(slide)}
+                         key={slide.slideId}>
                         <div className="slide_counter">
                             <p className="counter">{slide.slideId + 1}</p>
                         </div>

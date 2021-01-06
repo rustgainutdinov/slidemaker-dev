@@ -4,9 +4,7 @@ import {isRectangle} from "../typeGuardMethods/isRectangle";
 import {updateContent} from "./updateContent";
 
 function updateRectangle(editor: Editor, newRectangle: Content): Editor {
-    if (!isRectangle(editor.currentContent)) {
-        return editor
-    }
+    if (!editor.currentContent || !isRectangle(editor.currentContent)) return editor;
     return updateContent(editor, newRectangle);
 }
 

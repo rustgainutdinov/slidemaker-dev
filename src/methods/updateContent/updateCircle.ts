@@ -5,9 +5,7 @@ import {updateContent} from "./updateContent";
 
 
 function updateCircle(editor: Editor, newCircle: Content): Editor {
-    if (!isCircle(editor.currentContent)) {
-        return editor
-    }
+    if (!editor.currentContent || !isCircle(editor.currentContent)) return editor;
     return updateContent(editor, newCircle);
 }
 

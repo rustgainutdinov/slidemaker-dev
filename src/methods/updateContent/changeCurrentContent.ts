@@ -1,27 +1,12 @@
 import Editor from "../../model/Editor";
-import {ContentList} from "../../model/slide/Slide";
+import {updateEditorContent} from "../core/updateEditorContent";
 
 function changeCurrentContent(editor: Editor, newContentUuid: string): Editor {
-    let newContent = editor.currentSlide.contentList[newContentUuid];
-    let newContentList: ContentList = {};
-    let currContentList = editor.currentSlide.contentList;
-    for (let key in currContentList) {
-        newContentList[key] = {
-            ...currContentList[key],
-            layer: currContentList[key].layer - (currContentList[key].layer > newContent.layer ? 1 : 0)
-        }
-    }
-
-    newContent.layer = editor.currentContent.layer + 1;
-
-    return {
-        ...editor,
-        currentSlide: {
-            ...editor.currentSlide,
-            contentList: currContentList
-        },
-        currentContent: newContent
-    }
+    if (!editor.currentSlide || !editor.currentContent) return editor;
+    return updateEditorContent(editor, {
+        ...editor.currentSlide.contentList[newContentUuid],
+        layer: editor.currentContent.layer + 1
+    })
 }
 
 export default changeCurrentContent

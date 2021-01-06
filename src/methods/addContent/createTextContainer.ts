@@ -1,39 +1,14 @@
-import ContentType from "../../const/ContentType";
 import Editor from "../../model/Editor";
-import TextContainer from "../../model/slide/content/TextContainer";
-import getDefaultContent from "./getParamsOfContent/getDefaultContent";
 import {getDefaultTextContainer} from "./getParamsOfContent/getDefaultTextContainer";
-import {Slide} from "../../model/slide/Slide";
+import {updateEditorContent} from "../core/updateEditorContent";
 
 function createTextContainer(editor: Editor): Editor {
+    if (!editor.currentContent) return editor;
 
-    const textContainer: TextContainer = {
-        ...getDefaultContent(ContentType.TextContainer),
+    return updateEditorContent(editor, {
         ...getDefaultTextContainer(),
-        layer: editor.currentContent.layer + 1,
-        textContainer: undefined
-    };
-    const newSlidesList: Array<Slide> = editor.currentPresentation.sliderList.map((slide: Slide): Slide => {
-        if (slide.slideId !== editor.currentSlide.slideId) {
-            return slide;
-        }
-        return {
-            ...editor.currentSlide,
-            contentList: {
-                ...editor.currentSlide.contentList,
-                [textContainer.uuid]: textContainer
-            }
-        }
+        layer: editor.currentContent.layer + 1
     });
-    return {
-        ...editor,
-        currentContent: textContainer,
-        currentSlide: newSlidesList[editor.currentSlide.slideId],
-        currentPresentation: {
-            ...editor.currentPresentation,
-            sliderList: newSlidesList
-        }
-    };
 }
 
 export default createTextContainer;

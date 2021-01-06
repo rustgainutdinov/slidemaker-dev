@@ -1,7 +1,6 @@
 import Editor from "../../model/Editor";
 
 function updateSlideBackground(editor: Editor, color: string) {
-
     return {
         ...editor,
         currentSlide: {
