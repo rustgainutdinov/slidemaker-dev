@@ -1,5 +1,4 @@
 import Content from "./Content";
-import Point from "./Point";
 import RectangleSize from "./RectangleSize";
 
 type Image = Content & {

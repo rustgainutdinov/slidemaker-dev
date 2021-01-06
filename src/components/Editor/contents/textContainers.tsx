@@ -6,7 +6,8 @@ type TextContainerProps = {
     isCurrent: boolean
 }
 
-export const TextContainer = ({textContainer, onClick}: TextContainerProps) => {
+
+export const TextContainerEl = ({textContainer, onClick}: TextContainerProps) => {
     const textStyle = {
         fontFamily: textContainer.richText.fontFamily,
         fontWeight: textContainer.richText.fontStyle,
