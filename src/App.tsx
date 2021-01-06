@@ -1,7 +1,6 @@
 import {Component} from 'react';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-
 import {rootReducer} from "./store/Reducer";
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {Editor} from "./components/Editor";

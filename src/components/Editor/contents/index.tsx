@@ -14,11 +14,10 @@ import changeCurrentContent from "../../../methods/updateContent/changeCurrentCo
 import {getIteratedCurrSlideContentList} from "../../../methods/core/getIteratedCurrSlideContentList";
 
 export const Contents: React.FC = () => {
-    const editor: Editor = useSelector(
-        (state: RootState) => state.editorReducer.present
-    );
+    const editor: Editor = useSelector((state: RootState) => state.editorReducer.present);
+    const dispatch = useDispatch();
     const changeCurrentContentAction = (uuid: string): object => {
-        return useDispatch()(addState(changeCurrentContent(editor, uuid)));
+        return dispatch(addState(changeCurrentContent(editor, uuid)));
     };
 
     const drawContent = (content: Content) => {
