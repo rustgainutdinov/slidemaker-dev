@@ -11,49 +11,34 @@ import {Rectangle} from "./rectangles";
 import {isTextContainer} from "../../../methods/typeGuardMethods/isTextContainer";
 import {TextContainer} from "./textContainers";
 import changeCurrentContent from "../../../methods/updateContent/changeCurrentContent";
+import {getIteratedCurrSlideContentList} from "../../../methods/core/getIteratedCurrSlideContentList";
 
 export const Contents: React.FC = () => {
-    const presentEditor: Editor = useSelector(
+    const editor: Editor = useSelector(
         (state: RootState) => state.editorReducer.present
     );
-
-    const dispatch = useDispatch();
     const changeCurrentContentAction = (uuid: string): object => {
-        return dispatch(addState(changeCurrentContent(presentEditor, uuid)));
+        return useDispatch()(addState(changeCurrentContent(editor, uuid)));
     };
 
-    let sortedContents = [];
-    if (presentEditor.currentSlide) {
-        for (const key in presentEditor.currentSlide.contentList) {
-            const content = presentEditor.currentSlide.contentList[key];
-            sortedContents[content.layer] = content; //content.layer
-        }
-    }
     const drawContent = (content: Content) => {
         const onClickCallback = () => changeCurrentContentAction(content.uuid);
         if (isCircle(content)) {
-            return <Circle x={content.position.x} y={content.position.y} radius={content.radius}
-                           background={content.background} borderWidth={content.border.width}
-                           borderColor={content.border.color} onClick={onClickCallback.bind(content)}
-                           isCurrent={true} key={content.uuid}/>
+            return <Circle circle={content} onClick={onClickCallback.bind(content)} isCurrent={true}
+                           key={content.uuid}/>
         }
         if (isRectangle(content)) {
-            return <Rectangle x={content.position.x} y={content.position.y}
-                              width={content.rectangleSize.width} height={content.rectangleSize.height}
-                              background={content.background} borderWidth={content.border.width}
-                              borderColor={content.border.color}
-                              isCurrent={true} key={content.uuid} onClick={onClickCallback.bind(content)}/>
+            return <Rectangle rectangle={content} isCurrent={true} key={content.uuid}
+                              onClick={onClickCallback.bind(content)}/>
         }
         if (isTextContainer(content)) {
-            return <TextContainer x={content.position.x} y={content.position.y}
-                                  color={content.richText.color} key={content.uuid} isCurrent={true}
-                                  onClick={onClickCallback.bind(content)} value={content.richText.value}/>
+            return <TextContainer textContainer={content} isCurrent={true} onClick={onClickCallback.bind(content)}/>
         }
     };
 
     return (
         <svg width={1000} height="75vh" id={"currentSlideContent"}>
-            {sortedContents.map(drawContent)}
+            {getIteratedCurrSlideContentList(editor).map(drawContent)}
         </svg>
     );
 };

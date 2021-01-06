@@ -1,15 +1,14 @@
+import TextContainer from "../../../model/slide/content/TextContainer";
+
 type TextContainerProps = {
-    x: number,
-    y: number,
-    color: string,
-    value: string,
+    textContainer: TextContainer,
     onClick: () => void,
     isCurrent: boolean
 }
 
-export const TextContainer = ({ x, y, color, value, onClick }: TextContainerProps) => {
+export const TextContainer = ({textContainer, onClick}: TextContainerProps) => {
     return (
-        <text x={x} y={y} fill={color}
-            onClick={onClick} >{value}</text>
+        <text x={textContainer.position.x} y={textContainer.position.y} fill={textContainer.richText.color}
+              onClick={onClick}>{textContainer.richText.value}</text>
     );
 };

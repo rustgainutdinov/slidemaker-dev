@@ -1,19 +1,16 @@
+import Rectangle from "../../../model/slide/content/shape/Rectangle";
+
 type RectangleProps = {
-    x: number,
-    y: number,
-    width: number,
-    height: number,
-    background: string,
-    borderWidth: number,
-    borderColor: string,
+    rectangle: Rectangle,
     onClick: () => void,
     isCurrent: boolean
 }
 
-export const Rectangle = ({x, y, width, height, borderColor, borderWidth, background, onClick}: RectangleProps) => {
+export const Rectangle = ({rectangle, onClick}: RectangleProps) => {
     return (
-        <rect x={x} y={y} width={width} height={height}
-              strokeWidth={borderWidth}
-              stroke={borderColor} fill={background} onClick={onClick}/>
+        <rect x={rectangle.position.x} y={rectangle.position.y} width={rectangle.rectangleSize.width}
+              height={rectangle.rectangleSize.height}
+              strokeWidth={rectangle.border.width}
+              stroke={rectangle.border.color} fill={rectangle.background} onClick={onClick}/>
     );
 };
