@@ -1,16 +1,14 @@
+import Image from "../../../model/slide/content/Image";
+
 type ImageProps = {
-    x: number,
-    y: number,
-    width: number,
-    height: number,
-    url: string,
+    image: Image,
     onClick: () => void,
     isCurrent: boolean
 }
 
-export const Image = ({x, y, width, height, url, onClick}: ImageProps) => {
+export const ImageEl = ({image, onClick}: ImageProps) => {
     return (
-        <image x={x} y={y} width={width} height={height}
-            href={url} onClick={onClick}/>
+        <image x={image.position.x} y={image.position.y} width={image.size.width} height={image.size.height}
+            href={image.url} onClick={onClick}/>
     );
 };

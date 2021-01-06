@@ -6,7 +6,7 @@ type TextContainerProps = {
     isCurrent: boolean
 }
 
-export const TextContainer = ({textContainer, onClick}: TextContainerProps) => {
+export const TextContainerEl = ({textContainer, onClick}: TextContainerProps) => {
     return (
         <text x={textContainer.position.x} y={textContainer.position.y} fill={textContainer.richText.color}
               onClick={onClick}>{textContainer.richText.value}</text>
