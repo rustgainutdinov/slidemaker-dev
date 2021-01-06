@@ -1,18 +1,15 @@
+import Circle from "../../../model/slide/content/shape/Circle";
+
 type CircleProps = {
-    x: number,
-    y: number,
-    radius: number,
-    background: string,
-    borderWidth: number,
-    borderColor: string,
+    circle: Circle,
     onClick: () => void,
     isCurrent: boolean
 }
 
-export const Circle = ({x, y, radius, borderColor, borderWidth, background, onClick}: CircleProps) => {
+export const Circle = ({circle, onClick}: CircleProps) => {
     return (
-        <circle cx={x} cy={y} r={radius}
-                strokeWidth={borderWidth}
-                stroke={borderColor} fill={background} onClick={onClick}/>
+        <circle cx={circle.position.x} cy={circle.position.y} r={circle.radius}
+                strokeWidth={circle.border.width}
+                stroke={circle.border.color} fill={circle.background} onClick={onClick}/>
     );
 };
