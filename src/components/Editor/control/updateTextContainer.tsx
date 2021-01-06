@@ -55,7 +55,7 @@ export const UpdateTextContainer = ({ presentEditor, currentTextContainer }: upd
         ...currentTextContainer,
         richText: {
             ...currentTextContainer.richText,
-            fontWeight: event.target.value
+            fontStyle: event.target.value
         }
     });
     const handleRichTextFontSizeChange = (event: any) => updateStateUpdatingTextContainer({
