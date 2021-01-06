@@ -6,7 +6,7 @@ type CircleProps = {
     isCurrent: boolean
 }
 
-export const Circle = ({circle, onClick}: CircleProps) => {
+export const CircleEl = ({circle, onClick}: CircleProps) => {
     return (
         <circle cx={circle.position.x} cy={circle.position.y} r={circle.radius}
                 strokeWidth={circle.border.width}

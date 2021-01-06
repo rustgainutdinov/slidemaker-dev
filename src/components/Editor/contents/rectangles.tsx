@@ -6,7 +6,7 @@ type RectangleProps = {
     isCurrent: boolean
 }
 
-export const Rectangle = ({rectangle, onClick}: RectangleProps) => {
+export const RectangleEl = ({rectangle, onClick}: RectangleProps) => {
     return (
         <rect x={rectangle.position.x} y={rectangle.position.y} width={rectangle.rectangleSize.width}
               height={rectangle.rectangleSize.height}

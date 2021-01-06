@@ -1,6 +1,9 @@
 type RichText = {
 	color: string,
-	font: number,
+	fontFamily: string,
+	fontWeight: number,
+	fontStyle: string,
+	fontSize: number,
 	value: string,
 }
 export default RichText

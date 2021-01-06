@@ -1,6 +1,5 @@
 import {useDispatch} from "react-redux";
 import {addState} from "../../../store/Reducer/editor";
-import * as React from "react";
 import Editor from "../../../model/Editor";
 import createSlide from "../../../methods/addContent/createSlide";
 

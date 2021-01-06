@@ -6,9 +6,15 @@ type TextContainerProps = {
     isCurrent: boolean
 }
 
-export const TextContainer = ({textContainer, onClick}: TextContainerProps) => {
+export const TextContainerEl = ({textContainer, onClick}: TextContainerProps) => {
+    const textStyle = {
+        fontFamily: textContainer.richText.fontFamily,
+        fontWeight: textContainer.richText.fontWeight,
+        fontStyle: textContainer.richText.fontStyle,
+        fontSize: textContainer.richText.fontSize
+    };
     return (
         <text x={textContainer.position.x} y={textContainer.position.y} fill={textContainer.richText.color}
-              onClick={onClick}>{textContainer.richText.value}</text>
+              onClick={onClick}><tspan font-family={textStyle.fontFamily} font-weight={textStyle.fontWeight} font-style={textStyle.fontStyle} font-size={textStyle.fontSize}>{textContainer.richText.value}</tspan></text>
     );
 };
