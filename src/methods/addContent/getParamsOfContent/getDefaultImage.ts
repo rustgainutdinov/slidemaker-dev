@@ -4,16 +4,16 @@ import generateUuid from "../../core/generateUuid";
 export function getDefaultImage(): Image {
     return {
         position: {
-            x: 100,
-            y: 100
+            x: 50,
+            y: 50
         },
         uuid: generateUuid(),
         size: {
-            width: 100,
-            height: 50
+            width: 300,
+            height: 380
         },
-        url: "https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png",
+        url: "https://i.imgur.com/J6EWl6g.png",
         image: undefined,
         layer: 0
-    };
+    };  
 }
