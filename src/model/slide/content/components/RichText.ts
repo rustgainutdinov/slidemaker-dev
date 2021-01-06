@@ -3,7 +3,6 @@ type RichText = {
 	fontFamily: string,
 	fontWeight: number,
 	fontStyle: string,
-	textDecoration: boolean,
 	fontSize: number,
 	value: string,
 }

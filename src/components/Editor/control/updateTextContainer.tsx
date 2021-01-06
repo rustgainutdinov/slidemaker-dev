@@ -37,11 +37,32 @@ export const UpdateTextContainer = ({ presentEditor, currentTextContainer }: upd
             color: event.target.value
         }
     });
-    const handleRichTextFontChange = (event: any) => updateStateUpdatingTextContainer({
+    const handleRichTextFontFamilyChange = (event: any) => updateStateUpdatingTextContainer({
         ...currentTextContainer,
         richText: {
             ...currentTextContainer.richText,
-            font: event.target.value
+            fontFamily: event.target.value
+        }
+    });
+    const handleRichTextFontWeightChange = (event: any) => updateStateUpdatingTextContainer({
+        ...currentTextContainer,
+        richText: {
+            ...currentTextContainer.richText,
+            fontWeight: +event.target.value
+        }
+    });
+    const handleRichTextFontStyleChange = (event: any) => updateStateUpdatingTextContainer({
+        ...currentTextContainer,
+        richText: {
+            ...currentTextContainer.richText,
+            fontWeight: event.target.value
+        }
+    });
+    const handleRichTextFontSizeChange = (event: any) => updateStateUpdatingTextContainer({
+        ...currentTextContainer,
+        richText: {
+            ...currentTextContainer.richText,
+            fontSize: +event.target.value
         }
     });
     const handleRichTextValueChange = (event: any) => updateStateUpdatingTextContainer({
@@ -68,8 +89,20 @@ export const UpdateTextContainer = ({ presentEditor, currentTextContainer }: upd
                         <input type="text" className="param_input_label" onChange={handleWidthChange} value={currentTextContainer.width} />
                     </div>
                     <div className="params_field">
+                        <h3 className="param_name">Шрифт</h3>
+                        <input type="text" className="param_input_label" onChange={handleRichTextFontFamilyChange} value={currentTextContainer.richText.fontFamily} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Толщина</h3>
+                        <input type="text" className="param_input_label" onChange={handleRichTextFontWeightChange} value={currentTextContainer.richText.fontWeight} />
+                    </div>
+                    <div className="params_field">
                         <h3 className="param_name">Стиль</h3>
-                        <input type="text" className="param_input_label" onChange={handleRichTextFontChange} value={currentTextContainer.richText.font} />
+                        <input type="text" className="param_input_label" onChange={handleRichTextFontStyleChange} value={currentTextContainer.richText.fontStyle} />
+                    </div>
+                    <div className="params_field">
+                        <h3 className="param_name">Размер</h3>
+                        <input type="text" className="param_input_label" onChange={handleRichTextFontSizeChange} value={currentTextContainer.richText.fontSize} />
                     </div>
                     <div className="params_field">
                         <h3 className="param_name">Позиция X</h3>
