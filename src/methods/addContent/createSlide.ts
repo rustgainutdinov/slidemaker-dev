@@ -9,7 +9,8 @@ function createSlide(editor: Editor): Editor {
         ...getDefaultSlide(),
         contentList: {
             [content.uuid]: content
-        }
+        },
+        slideId: editor.currentPresentation.slides.length
     };
     return {
         ...editor,
