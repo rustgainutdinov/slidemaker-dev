@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import Editor from "../../../model/Editor";
-import { addState } from "../../../store/Reducer/editor";
-import updateTextContainer from "../../../methods/updateContent/updateTextContainer";
-import TextContainer from "../../../model/slide/content/TextContainer";
+import Editor from "../../../../model/Editor";
+import { addState } from "../../../../store/Reducer/editor";
+import updateTextContainer from "../../../../methods/updateContent/updateTextContainer";
+import TextContainer from "../../../../model/slide/content/TextContainer";
 
 type updateTextContainerProps = {
     presentEditor: Editor, currentTextContainer: TextContainer

@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import Editor from "../../../model/Editor";
-import { addState } from "../../../store/Reducer/editor";
-import updateCircle from "../../../methods/updateContent/updateCircle";
-import Circle from "../../../model/slide/content/shape/Circle";
+import Editor from "../../../../model/Editor";
+import { addState } from "../../../../store/Reducer/editor";
+import updateCircle from "../../../../methods/updateContent/updateCircle";
+import Circle from "../../../../model/slide/content/shape/Circle";
 
 type updateCircleProps = {
     presentEditor: Editor, currentCircle: Circle

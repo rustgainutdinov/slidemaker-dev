@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import Editor from "../../../model/Editor";
-import { addState } from "../../../store/Reducer/editor";
-import Rectangle from "../../../model/slide/content/shape/Rectangle";
-import updateRectangle from "../../../methods/updateContent/updateRectangle";
+import Editor from "../../../../model/Editor";
+import { addState } from "../../../../store/Reducer/editor";
+import Rectangle from "../../../../model/slide/content/shape/Rectangle";
+import updateRectangle from "../../../../methods/updateContent/updateRectangle";
 
 type updateRectangleProps = {
     presentEditor: Editor, currentRectangle: Rectangle
