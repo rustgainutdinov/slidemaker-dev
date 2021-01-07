@@ -15,6 +15,6 @@ export const TextContainerEl = ({textContainer, onClick}: TextContainerProps) =>
     };
     return (
         <text x={textContainer.position.x} y={textContainer.position.y} fill={textContainer.richText.color}
-              onClick={onClick}><tspan font-family={textStyle.fontFamily} font-weight={textStyle.fontWeight} font-style={textStyle.fontStyle} font-size={textStyle.fontSize}>{textContainer.richText.value}</tspan></text>
+              onClick={onClick}><tspan fontFamily={textStyle.fontFamily} fontWeight={textStyle.fontWeight} fontStyle={textStyle.fontStyle} fontSize={textStyle.fontSize}>{textContainer.richText.value}</tspan></text>
     );
 };

@@ -14,7 +14,7 @@ export const PreviewSlidesList = ({editor}: PreviewSlidesListProps) => {
     let dispatch = useDispatch();
     const drawSlidePreview = (slide: Slide) => {
         const onSlideClickCallback = () => dispatch(addState(changeCurrentSlide(editor, slide.slideId)));
-        return <PreviewSlide slide={slide} onClick={onSlideClickCallback}/>
+        return <PreviewSlide slide={slide} onClick={onSlideClickCallback} key={slide.slideId}/>
     };
     return (
         <div>{editor.currentPresentation.slides.map(drawSlidePreview)}</div>
