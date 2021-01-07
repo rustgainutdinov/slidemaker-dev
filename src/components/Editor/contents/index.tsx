@@ -36,13 +36,13 @@ export const Contents: React.FC = () => {
             return <TextContainerEl textContainer={content} isCurrent={true} onClick={onClickCallback.bind(content)} key={content.uuid}/>
         }
         if (isImage(content)) {
-            return <ImageEl image={content} isCurrent={true} onClick={onClickCallback.bind(content)}
-                            key={content.uuid}/>
+            return <ImageEl image={content} isCurrent={true} onClick={onClickCallback.bind(content)} key={content.uuid}/>
         }
     };
-
+    
     return (
         <svg width={1000} height="75vh" id={"currentSlideContent"}>
+            <rect width={'100%'} height={'100%'} fill={editor.currentSlide?.background}/>
             {getIteratedCurrSlideContentList(editor).map(drawContent)}
         </svg>
     );
