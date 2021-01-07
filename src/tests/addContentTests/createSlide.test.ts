@@ -1,7 +1,5 @@
-import createRectangle from "../../methods/addContent/createRectangle";
-import createTextContainer from "../../methods/addContent/createTextContainer";
+import createSlide from "../../methods/addContent/createSlide";
 import getDefaultEditor from "../../methods/addContent/getDefaultEditor";
-import { getDefaultTextContainer } from "../../methods/addContent/getParamsOfContent/getDefaultTextContainer";
 import { isTextContainer } from "../../methods/typeGuardMethods/isTextContainer";
 import Editor from "../../model/Editor";
 import throwNewExeption from "../Exeption";
@@ -13,7 +11,7 @@ describe('createRectangleTest', () => {
         return
     };
     test('createRectangleTest', () => {
-        const newEditor = createTextContainer(editor);
+        const newEditor = createSlide(editor);
         if (newEditor.currentContent == null) return
 
         if (!isTextContainer(newEditor.currentContent)) {
@@ -22,12 +20,16 @@ describe('createRectangleTest', () => {
         }
 
         if (editor.currentContent == undefined) return
-
-        expect(newEditor.currentContent).toStrictEqual({
-            ...getDefaultTextContainer(),
-            uuid: newEditor.currentContent.uuid,
-            layer: editor.currentContent?.layer + 1
+        expect(newEditor.currentContent.richText).toStrictEqual({
+            color: '#000000', fontWeight: 600, fontFamily: 'Roboto',
+            fontSize: 40, fontStyle: 'normal', value: 'Текст'
         })
+        expect(newEditor.currentContent.width).toBe(400);
+        expect(newEditor.currentContent.position).toStrictEqual({
+            x: 100,
+            y: 100
+        })
+        expect(newEditor.currentPresentation.slides.length).toBe(editor.currentPresentation.slides.length + 1)
     });
 
 });

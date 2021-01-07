@@ -15,5 +15,5 @@ export function getDefaultImage(): Image {
         url: "https://i.imgur.com/J6EWl6g.png",
         image: undefined,
         layer: 0
-    };  
+    };
 }

@@ -1,21 +1,22 @@
-import createRectangle from "../../methods/addContent/createRectangle";
+import createImage from "../../methods/addContent/createImage";
 import getDefaultEditor from "../../methods/addContent/getDefaultEditor";
-import { getDefaultRectangle } from "../../methods/addContent/getParamsOfContent/getDefaultRectangle";
-import { isRectangle } from "../../methods/typeGuardMethods/isRectangle";
+import { getDefaultImage } from "../../methods/addContent/getParamsOfContent/getDefaultImage";
+import { isImage } from "../../methods/typeGuardMethods/isImage";
 import Editor from "../../model/Editor";
 import throwNewExeption from "../Exeption";
 
 const editor: Editor = getDefaultEditor();
 
-describe('createRectangleTest', () => {
+describe('createImageTest', () => {
     if (editor.currentContent == null) {
         return
     };
-    test('createRectangleTest', () => {
-        const newEditor = createRectangle(editor);
+
+    test('createImageTest', () => {
+        const newEditor = createImage(editor);
         if (newEditor.currentContent == null) return
 
-        if (!isRectangle(newEditor.currentContent)) {
+        if (!isImage(newEditor.currentContent)) {
             throwNewExeption();
             return;
         }
@@ -23,7 +24,7 @@ describe('createRectangleTest', () => {
         if (editor.currentContent == undefined) return
 
         expect(newEditor.currentContent).toStrictEqual({
-            ...getDefaultRectangle(),
+            ...getDefaultImage(),
             uuid: newEditor.currentContent.uuid,
             layer: editor.currentContent?.layer + 1
         })
