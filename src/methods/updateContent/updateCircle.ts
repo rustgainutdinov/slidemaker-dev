@@ -1,12 +1,11 @@
 import Editor from "../../model/Editor";
 import Content from "../../model/slide/content/Content";
-import {isCircle} from "../typeGuardMethods/isCircle";
-import {updateContent} from "./updateContent";
-
+import { updateEditorContent } from "../core/updateEditorContent";
+import { isCircle } from "../typeGuardMethods/isCircle";
 
 function updateCircle(editor: Editor, newCircle: Content): Editor {
     if (!editor.currentContent || !isCircle(editor.currentContent)) return editor;
-    return updateContent(editor, newCircle);
+    return updateEditorContent(editor, newCircle);
 }
 
 export default updateCircle
