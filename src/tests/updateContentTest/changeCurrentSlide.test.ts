@@ -1,4 +1,3 @@
-import createCircle from "../../methods/addContent/createCircle";
 import createSlide from "../../methods/addContent/createSlide";
 import getDefaultEditor from "../../methods/addContent/getDefaultEditor";
 
