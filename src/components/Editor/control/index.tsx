@@ -7,12 +7,14 @@ import {CreateImage} from './createImage'
 export class Control extends Component {
     render() {
         return (
-            <ul className="dropdown">
-                <li><a href="#"><CreateRectangle/></a></li>
-                <li><a href="#"><CreateCircle/></a></li>
-                <li><a href="#"><CreateTextContainer/></a></li>
-                <li><a href="#"><CreateImage/></a></li>
-            </ul>
+            <li><a href="#" className="tools_button plus">+</a>
+                <ul className='create_dropdown'>
+                    <li><CreateRectangle/></li>
+                    <li><CreateCircle/></li>
+                    <li><CreateImage/></li>
+                    <li><CreateTextContainer/></li>
+                </ul>
+            </li>
         );
     }
 }
