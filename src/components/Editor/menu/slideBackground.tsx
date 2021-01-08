@@ -16,7 +16,7 @@ export const SlideBackgroundEl = () => {
     return (
         <ul className="dropdown">
             <li>
-                <a href="#">
+                <a href="#" className="slideBackground">
                     <input type="text" className="param_input_label" value={presentEditor.currentSlide?.background} onInput={handleSlideBackgroundChange} />
                 </a>
             </li>

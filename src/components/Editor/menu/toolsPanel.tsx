@@ -22,7 +22,7 @@ export const ToolsPanel = () => {
                         <Control />
                     </ul>
                 </li>
-                <li><a href="#" className="tools_button"><DeletingControl /></a></li>
+                <li><DeletingControl /></li>
                 <li><a href="#" className="tools_button">Фон</a>
                     <ul className="dropdown">
                         <SlideBackgroundEl />

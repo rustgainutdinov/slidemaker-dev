@@ -15,6 +15,6 @@ export const DeleteElement = ({ presentEditor, currentContent }: deletingProps) 
     const handleDeletingContent = () => updateStateDeletingElement(currentContent);
 
     return (
-        <button onClick={handleDeletingContent}>Удалить элемент</button>
+        <button className="tools_button" onClick={handleDeletingContent}> Удалить</button>
     );
 };
