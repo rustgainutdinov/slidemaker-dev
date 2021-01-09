@@ -35,4 +35,4 @@ export const ToolsPanel = () => {
             </div>
         </div>
     )
-};
+}
