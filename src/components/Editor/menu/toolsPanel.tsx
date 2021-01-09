@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { redoState, undoState } from "../../../store/Reducer/editor";
 import { TextTools } from "../textTools/textTools";
 import './toolsPanel.css'
+import { ShapeTools } from "../shapeTools/shapeTools";
 
 export const ToolsPanel = () => {
     const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export const ToolsPanel = () => {
                     <UpdateControlElements />
                     <ControlEl />
                 </div>
+                <ShapeTools />
                 <TextTools />
             </div>
         </div>

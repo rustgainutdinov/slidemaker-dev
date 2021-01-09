@@ -59,6 +59,11 @@ section {
     align-items: center;
 }
 
+.shape_tools_panel {
+    display: flex;
+    align-items: center;
+}
+
 .tools_button {
     display: flex;
     align-items: center;
