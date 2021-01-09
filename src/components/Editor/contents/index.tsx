@@ -33,13 +33,13 @@ export const Contents: React.FC = () => {
                                 onClick={onClickCallback.bind(content)}/>
         }
         if (isTextContainer(content)) {
-            return <TextContainerEl textContainer={content} isCurrent={true} onClick={onClickCallback.bind(content)} key={content.uuid}/>
+            return <TextContainerEl editor={editor} textContainer={content} isCurrent={true} onClick={onClickCallback.bind(content)} key={content.uuid}/>
         }
         if (isImage(content)) {
             return <ImageEl image={content} isCurrent={true} onClick={onClickCallback.bind(content)} key={content.uuid}/>
         }
     };
-    
+
     const drawBackground = () => {
         if (editor.currentSlide?.background == '') {
             return (
@@ -51,7 +51,7 @@ export const Contents: React.FC = () => {
             )
         }
     }
-    
+
     return (
         <svg width={1000} height="75vh" id={"currentSlideContent"}>
             {drawBackground()}

@@ -11,23 +11,24 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 li {
-    list-style-type: none; 
+    list-style-type: none;
 }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;;
@@ -35,15 +36,26 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
 }
+
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 
 section {
     overflow-x: hidden;
+}
+
+textarea {
+    resize: none;
+    overflow: hidden;
+    outline: none;
+    border: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .main_menu {
@@ -72,8 +84,7 @@ section {
 
 .title {
     margin-bottom: 20px;
-    font-size: 400;
-    color:rgba(250, 250, 250, 0.6);
+    color: rgba(250, 250, 250, 0.6);
     font-style: normal;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -83,7 +94,17 @@ section {
     border: none;
     background: none;
     outline: none;
-    color:rgba(250, 250, 250, 0.6);
+    color: rgba(250, 250, 250, 0.6);
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.title input {
+    border: none;
+    background: none;
+    outline: none;
+    color: rgba(250, 250, 250, 0.6);
     font-style: normal;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -98,16 +119,16 @@ section {
     width: 107px;
     margin-right: 23px;
     border-radius: 10px;
-    color: rgba(250, 250, 250);
+    color: rgba(250, 250, 250, 1);
     font-size: 16px;
     text-decoration: none;
-    border:none;
+    border: none;
     outline: none;
 }
 
 .edit_panel {
-   margin-left: 20px;
-   border-right: 2px solid  #FDCE5D; 
+    margin-left: 20px;
+    border-right: 2px solid #FDCE5D;
 }
 
 .edit_tools_box:first-child {
@@ -123,8 +144,7 @@ section {
 }
 
 .edit_title {
-    font-size: 400;
-    color:rgba(250, 250, 250, 0.6);
+    color: rgba(250, 250, 250, 0.6);
     font-style: normal;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
@@ -140,19 +160,17 @@ section {
     width: 85px;
     margin-right: 23px;
     border-radius: 8px;
-    color: rgba(250, 250, 250);
+    color: rgba(250, 250, 250, 1);
     font-size: 12px;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
-li ul
-{
+li ul {
     display: none;
     width: 107px;
 }
 
-ul li a 
-{
+ul li a {
     display: block;
     cursor: default;
     text-decoration: none;
@@ -178,39 +196,38 @@ ul li:first-child a {
 }
 
 ul li:last-child a {
-    border-radius: 0 0  10px 10px;
+    border-radius: 0 0 10px 10px;
 }
 
-li:hover ul 
-{
+li:hover ul {
     display: block;
     position: absolute;
 }
 
-li:hover li
-{
+li:hover li {
     float: none;
     font-size: 16px;
 }
 
-li:hover a 
-{
+li:hover a {
     background-color: #FDCE5D;
-    color: 	#808080;
+    color: #808080;
 }
 
-.tools_button:hover
-{
+.tools_button:hover {
     background-color: #FDCE5D;
-    color: 	#808080;
+    color: #808080;
 }
 
-li:hover li a:hover 
-{
+.tools_button:hover {
+    background-color: #FDCE5D;
+    color: #808080;
+}
+
+li:hover li a:hover {
     background-color: #0184F2;
-    color: 	 #ffffff;
+    color: #ffffff;
 }
-
 
 .working_space {
     display: flex;
@@ -224,7 +241,7 @@ li:hover li a:hover
 
 .slides_preview::-webkit-scrollbar {
     width: 0;
-  }
+}
 
 .slide_view {
     width: 80%;
@@ -270,10 +287,10 @@ li:hover li a:hover
     border: 5px solid #DADCE0;
     box-sizing: border-box;
     border-radius: 10px;
-    background: linear-gradient(#DADCE0 60%,#DADCE0 60%), linear-gradient(#DADCE0 60%, #DADCE0 60%);
-    background-position:center;
-    background-size: 20% 5px,5px 30%;
-    background-repeat:no-repeat;
+    background: linear-gradient(#DADCE0 60%, #DADCE0 60%), linear-gradient(#DADCE0 60%, #DADCE0 60%);
+    background-position: center;
+    background-size: 20% 5px, 5px 30%;
+    background-repeat: no-repeat;
     margin-left: 18px;
 }
 
@@ -357,8 +374,8 @@ li:hover li a:hover
     text-decoration: none;
     background: #f2f2f2;
     font-size: 12pt;
-    cursor:pointer;
-  }
+    cursor: pointer;
+}
 
 .close:hover {
     background: #e6e6ff;
