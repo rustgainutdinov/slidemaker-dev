@@ -6,6 +6,7 @@ function getDefaultSlide(): Slide {
         background: '#FFFFFF',
         contentList: {},
         svgDemo: "",
+        backgroundImage: '',
         animation: 1
     }
 }

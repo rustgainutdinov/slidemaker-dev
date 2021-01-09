@@ -39,10 +39,22 @@ export const Contents: React.FC = () => {
             return <ImageEl image={content} isCurrent={true} onClick={onClickCallback.bind(content)} key={content.uuid}/>
         }
     };
+
+    const drawBackground = () => {
+        if (editor.currentSlide?.background == '') {
+            return (
+                <image href={editor.currentSlide?.backgroundImage} height="100%" width="100%"/>
+            )
+        } else {
+            return(
+                <rect width={'100%'} height={'100%'} fill={editor.currentSlide?.background} />
+            )
+        }
+    }
     
     return (
         <svg width={1000} height="75vh" id={"currentSlideContent"}>
-            <rect width={'100%'} height={'100%'} fill={editor.currentSlide?.background}/>
+            {drawBackground()}
             {getIteratedCurrSlideContentList(editor).map(drawContent)}
         </svg>
     );

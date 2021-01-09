@@ -1,5 +1,5 @@
 import getDefaultEditor from "../../methods/addContent/getDefaultEditor";
-import updateSlideBackground from "../../methods/updateContent/updateSlideBackground";
+import { updateSlideBackground } from "../../methods/updateContent/updateSlideBackground";
 
 const editor = getDefaultEditor();
 const newBackgroundColor: string = 'testColor';

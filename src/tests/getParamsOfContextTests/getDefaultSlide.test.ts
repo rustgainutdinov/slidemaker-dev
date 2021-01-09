@@ -7,6 +7,7 @@ describe('getDefaultSlideTests', () => {
             background: '#FFFFFF',
             contentList: {},
             svgDemo: "",
+            backgroundImage: '',
             animation: 1
         });
     });
