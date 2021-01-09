@@ -1,36 +1,33 @@
-import ContentType from "../../const/ContentType";
 import createCircle from "../../methods/addContent/createCircle";
 import getDefaultEditor from "../../methods/addContent/getDefaultEditor";
-import Content from "../../model/slide/content/Content";
-import Circle from "../../model/slide/content/shape/Circle";
+import { getDefaultCircle } from "../../methods/addContent/getParamsOfContent/getDefaultCircle";
+import { isCircle } from "../../methods/typeGuardMethods/isCircle";
+import Editor from "../../model/Editor";
 import throwNewExeption from "../Exeption";
 
-function isCircle(content: Content): content is Circle {
-	return 'circle' in content;
-}
-const editor = getDefaultEditor()
+const editor: Editor = getDefaultEditor();
 
 describe('createCircleTest', () => {
-	const newEditor = createCircle(editor);
+	if (editor.currentContent == null) {
+		return
+	};
 
-	test('addContentToEditor', () => {
-
-		expect(newEditor.currentContent.type).toBe(ContentType.Circle);
-		expect(checkInstance()).toBe(true)
+	test('createCircleTest', () => {
+		const newEditor = createCircle(editor);
+		if (newEditor.currentContent == null) return
 
 		if (!isCircle(newEditor.currentContent)) {
 			throwNewExeption();
 			return;
 		}
 
-		expect(newEditor.currentContent.radius).toBe(100);
+		if (editor.currentContent == undefined) return
+
+		expect(newEditor.currentContent).toStrictEqual({
+			...getDefaultCircle(),
+			uuid: newEditor.currentContent.uuid,
+			layer: editor.currentContent?.layer + 1
+		})
 	});
 
-	function checkInstance() {
-		if (isCircle(newEditor.currentContent)) {
-			return true;
-		} else {
-			return false
-		}
-	}
 });

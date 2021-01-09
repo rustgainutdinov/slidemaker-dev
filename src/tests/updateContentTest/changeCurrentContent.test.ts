@@ -5,6 +5,7 @@ const editor = getDefaultEditor();
 const newEditor = createCircle(editor);
 
 describe('changeCurrentContentTest', () => {
+    if (editor.currentContent == null || newEditor.currentContent == null) return
     const firstId = editor.currentContent.uuid;
     const secondId = newEditor.currentContent.uuid;
 

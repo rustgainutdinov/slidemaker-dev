@@ -1,4 +1,4 @@
-import {Slide} from "../../model/slide/Slide";
+import { Slide } from "../../model/slide/Slide";
 import Editor from "../../model/Editor";
 import Content from "../../model/slide/content/Content";
 

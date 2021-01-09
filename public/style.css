@@ -101,6 +101,8 @@ section {
     color: rgba(250, 250, 250);
     font-size: 16px;
     text-decoration: none;
+    border:none;
+    outline: none;
 }
 
 .edit_panel {
@@ -192,6 +194,12 @@ li:hover li
 }
 
 li:hover a 
+{
+    background-color: #FDCE5D;
+    color: 	#808080;
+}
+
+.tools_button:hover
 {
     background-color: #FDCE5D;
     color: 	#808080;
@@ -382,3 +390,6 @@ li:hover li a:hover
     }
 }
 
+.slideBackground {
+    border-radius: 10px 10px 10px 10px !important;
+}
