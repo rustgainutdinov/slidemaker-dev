@@ -4,6 +4,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { redoState, undoState } from "../../../store/Reducer/editor";
 import { TextTools } from "../textTools/textTools";
+import './toolsPanel.css'
 
 export const ToolsPanel = () => {
     const dispatch = useDispatch();
@@ -16,10 +17,7 @@ export const ToolsPanel = () => {
                     <li><a href="#" className="tools_button">Файл</a></li>
                     <li><a href="#" className="tools_button" onClick={() => dispatch(undoState())}>UNDO</a></li>
                     <li><a href="#" className="tools_button" onClick={() => dispatch(redoState())}>REDO</a></li>
-                    <li>
-                        <a href="#edit_params" className="tools_button">Изменить</a>
-                        <UpdateControlElements />
-                    </li>
+                    <UpdateControlElements />
                     <ControlEl />
                 </div>
                 <TextTools />

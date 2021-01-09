@@ -3,6 +3,7 @@ import { CreateCircle } from './createCircle'
 import { CreateRectangle } from './createRectangle'
 import { CreateTextContainer } from './createTextContainer'
 import { CreateImage } from './createImage'
+import './control.css'
 
 export function ControlEl() {
     const [checked, setClassName] = useState(false);

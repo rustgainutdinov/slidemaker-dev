@@ -4,6 +4,7 @@ import updateTextContainer from "../../../methods/updateContent/updateTextContai
 import Editor from "../../../model/Editor";
 import TextContainer from "../../../model/slide/content/TextContainer";
 import { addState } from "../../../store/Reducer/editor";
+import './text.css';
 
 type updateTextContainerProps = {
     presentEditor: Editor, currentTextContainer: TextContainer

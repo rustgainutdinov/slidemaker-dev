@@ -1,0 +1,11 @@
+.logo_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    background-color: #FDCE5D;
+    margin: 0 37px 0 30px;
+    font-size: 64px;
+    border-radius: 10px;
+}

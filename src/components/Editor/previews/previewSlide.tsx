@@ -1,4 +1,5 @@
 import {Slide} from "../../../model/slide/Slide";
+import './previews.css'
 
 type PreviewSlideProps = {
     slide: Slide,

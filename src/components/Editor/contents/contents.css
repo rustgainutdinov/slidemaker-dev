@@ -1,0 +1,12 @@
+.slide_view {
+    width: 80%;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide_view svg {
+    width: 80%;
+    box-shadow: -2px 10px 18px 10px #00000026;
+}

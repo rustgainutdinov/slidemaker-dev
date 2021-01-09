@@ -9,29 +9,28 @@ type updateTextContainerProps = {
     presentEditor: Editor, currentTextContainer: TextContainer
 }
 
-export const TextFontFamily = ({ presentEditor, currentTextContainer }: updateTextContainerProps) => {
+export const ColorEl = ({ presentEditor, currentTextContainer }: updateTextContainerProps) => {
     const dispatch = useDispatch();
     const updateStateUpdatingTextContainer = (textContainer: TextContainer) => dispatch(addState(updateTextContainer(presentEditor, textContainer)));
 
-    const handleSelectFontFamily = (event: any) => {
+    const handleSelectTextColor = (event: any) => {
         updateStateUpdatingTextContainer({
             ...currentTextContainer,
             richText: {
                 ...currentTextContainer.richText,
-                fontFamily: event.target.value
+                color: event.target.value
             }
         });
     }
 
     return (
         <li>
-            <select className="select" onInput={handleSelectFontFamily}>
-                <option value='Arial'>Arial</option>
-                <option value='Georgia'>Georgia</option>
-                <option value='Roboto'>Roboto</option>
-                <option value='Roboto Mono'>Roboto Mono</option>
-                <option value='Verdana'>Verdana</option>
-            </select>
-        </li>
+            <input className="colorPalette" type="color" list="colorList" onInput={handleSelectTextColor} />
+            <datalist id="colorList">
+                <option value="#ff0000" label="Красный" />
+                <option value="#008000" label="Зелёный" />
+                <option value="#0000ff" label="Синий" />
+            </datalist>
+        </li >
     )
 }

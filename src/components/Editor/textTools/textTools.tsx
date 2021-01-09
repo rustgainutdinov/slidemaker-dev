@@ -6,6 +6,7 @@ import { RootState } from "../../../store/Reducer";
 import { TextFontFamily } from "./textFontFamilyControl";
 import { TextSize } from "./textSizeControl";
 import { TextStyle } from "./textStyleControl";
+import { ColorEl } from "./textColor";
 
 
 export const TextTools: React.FC = () => {
@@ -22,6 +23,7 @@ export const TextTools: React.FC = () => {
                     <TextStyle presentEditor={presentEditor} currentTextContainer={content} />
                     <TextSize presentEditor={presentEditor} currentTextContainer={content} />
                     <TextFontFamily presentEditor={presentEditor} currentTextContainer={content} />
+                    <ColorEl presentEditor={presentEditor} currentTextContainer={content} />
                 </>
             )
         }
@@ -30,103 +32,6 @@ export const TextTools: React.FC = () => {
     return (
         <div className="text_tools">
             {getUpdateContentControlElements(presentEditor)}
-            <li>
-                <a href="#" className="tools_button color">A</a>
-                <ul className="сolor_palette">
-                    <li className="defolt_colors">
-                        <ul>
-                            <li>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                            </li>
-                            <li>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                            </li>
-                            <li>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                            </li>
-                            <li>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                            </li>
-                            <li>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                            </li>
-                            <li>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                            </li>
-                            <li>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                                <button className="defolt_colors_button"></button>
-                            </li>
-                        </ul>
-                    </li>
-                    <li className="custom_color">
-                        <p>Другой</p>
-                        <button className="custom_color_button">+</button>
-                    </li>
-                </ul>
-            </li>
         </div>
     )
 }
