@@ -12,6 +12,6 @@ export const CreateTextContainer: React.FC = () => {
     );
     const updateStateCreatingTextContainer = () => dispatch(addState(getEditorWithNewTextContainer(presentEditor)));
     return (
-        <button className="create_text" onClick={updateStateCreatingTextContainer}>А</button>
+        <button className="create_element text" onClick={updateStateCreatingTextContainer}>А</button>
     );
 };

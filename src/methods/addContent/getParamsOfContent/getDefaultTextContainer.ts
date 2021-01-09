@@ -9,8 +9,10 @@ export function getDefaultTextContainer(): TextContainer {
         },
         uuid: generateUuid(),
         width: 400,
-        richText: {color: '#000000', fontWeight: 400, fontFamily: 'sans-serif',
-            fontSize: 16, fontStyle: 'normal', value: 'Text container'},
+        richText: {
+            color: '#000000', fontWeight: 400, fontFamily: 'sans-serif',
+            fontSize: 16, fontStyle: 'normal', textDecoration: 'none', value: 'Text container'
+        },
         textContainer: undefined,
         layer: 0
     };

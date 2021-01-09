@@ -1,13 +1,13 @@
-import {Previews} from "./previews/previews";
-import {Contents} from "./contents";
+import { Previews } from "./previews/previews";
+import { Contents } from "./contents";
 import React from "react";
 
 export const WorkingSpace = () => {
     return (
         <div className="working_space">
-            <Previews/>
+            <Previews />
             <div className="slide_view">
-                <Contents/>
+                <Contents />
             </div>
         </div>
     )
