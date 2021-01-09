@@ -9,8 +9,6 @@ import { ShapeTools } from "../shapeTools/shapeTools";
 
 export const ToolsPanel = () => {
     const dispatch = useDispatch();
-    
-
 
     return (
         <div className="tools_panel">
