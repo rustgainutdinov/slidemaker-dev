@@ -1,11 +1,8 @@
-
 import {Control} from "./control";
 import {UpdateControlElements} from "./control/updateControlElements";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { redoState, undoState } from "../../../store/Reducer/editor";
-import { PresentationEl } from "./presentationName";
-import { SlideBackgroundEl } from "./slideBackground";
 import { DeletingControl } from "./control/deletingControl";
 import { PresentationEl } from "./presentationName";
 import { SlideBackgroundEl } from "./slideBackground";
@@ -38,4 +35,4 @@ export const ToolsPanel = () => {
             </div>
         </div>
     )
-};
+}
