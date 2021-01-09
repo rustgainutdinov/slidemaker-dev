@@ -1,12 +1,12 @@
 import * as React from "react";
 import { useSelector } from "react-redux";
-import { isCircle } from "../../../methods/typeGuardMethods/isCircle";
-import { isImage } from "../../../methods/typeGuardMethods/isImage";
-import { isRectangle } from "../../../methods/typeGuardMethods/isRectangle";
-import { isTextContainer } from "../../../methods/typeGuardMethods/isTextContainer";
-import Editor from "../../../model/Editor";
-import Content from "../../../model/slide/content/Content";
-import { RootState } from "../../../store/Reducer";
+import { isCircle } from "../../../../methods/typeGuardMethods/isCircle";
+import { isImage } from "../../../../methods/typeGuardMethods/isImage";
+import { isRectangle } from "../../../../methods/typeGuardMethods/isRectangle";
+import { isTextContainer } from "../../../../methods/typeGuardMethods/isTextContainer";
+import Editor from "../../../../model/Editor";
+import Content from "../../../../model/slide/content/Content";
+import { RootState } from "../../../../store/Reducer";
 import { UpdateCircle } from "./updateCircle";
 import { UpdateImage } from "./updateImage";
 import { UpdateRectangle } from "./updateRectangle";
@@ -37,7 +37,7 @@ export const UpdateControlElements: React.FC = () => {
     return (
         <div>
             <li>
-                <a href="#edit_params" className="tools_button">Изменить</a>
+                <a href="#edit_params" className="tools_button">РР·РјРµРЅРёС‚СЊ</a>
                 {getUpdateContentControlElements(presentEditor)}
             </li>
         </div>

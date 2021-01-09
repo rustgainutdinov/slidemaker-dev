@@ -1,11 +1,12 @@
-import { ControlEl } from "../control";
-import { UpdateControlElements } from "../control/updateControlElements";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { redoState, undoState } from "../../../store/Reducer/editor";
-import { DeletingControl } from "./control/deletingControl";
+import { ShapeTools } from "../shapeTools/shapeTools";
+import { TextTools } from "../textTools/textTools";
+import { ControlEl } from "./control";
+import { UpdateControlElements } from "./control/updateControlElements";
 import { PresentationEl } from "./presentationName";
-import { SlideBackgroundEl } from "./slideBackground";
+import './toolsPanel.css'
 
 export const ToolsPanel = () => {
     const dispatch = useDispatch();
