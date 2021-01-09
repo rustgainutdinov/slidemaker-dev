@@ -37,7 +37,7 @@ export const UpdateControlElements: React.FC = () => {
     return (
         <div>
             <li>
-                <a href="#edit_params" className="tools_button">РР·РјРµРЅРёС‚СЊ</a>
+                <a href="#edit_params" className="tools_button">Изменить</a>
                 {getUpdateContentControlElements(presentEditor)}
             </li>
         </div>

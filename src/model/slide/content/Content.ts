@@ -1,6 +1,6 @@
 import Point from "./Point"
 
-type  Content = {
+type Content = {
     position: Point,
     layer: number,
     uuid: string

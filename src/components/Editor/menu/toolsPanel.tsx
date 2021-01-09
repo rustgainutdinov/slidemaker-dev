@@ -3,16 +3,16 @@ import { UpdateControlElements } from "../control/updateControlElements";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { redoState, undoState } from "../../../store/Reducer/editor";
-import { TextTools } from "../textTools/textTools";
-import './toolsPanel.css'
-import { ShapeTools } from "../shapeTools/shapeTools";
+import { DeletingControl } from "./control/deletingControl";
+import { PresentationEl } from "./presentationName";
+import { SlideBackgroundEl } from "./slideBackground";
 
 export const ToolsPanel = () => {
     const dispatch = useDispatch();
 
     return (
         <div className="tools_panel">
-            <h1 className="title">Самая лучшая презентация</h1>
+            <h1 className="title"><PresentationEl /></h1>
             <div className="tools">
                 <div className="main_tools">
                     <li><a href="#" className="tools_button">Файл</a></li>
@@ -26,4 +26,4 @@ export const ToolsPanel = () => {
             </div>
         </div>
     )
-};
+}

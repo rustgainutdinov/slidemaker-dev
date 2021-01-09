@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import Editor from "../../../model/Editor";
-import { addState } from "../../../store/Reducer/editor";
-import Image from "../../../model/slide/content/Image";
-import updateImage from "../../../methods/updateContent/updateImage";
+import Editor from "../../../../model/Editor";
+import { addState } from "../../../../store/Reducer/editor";
+import Image from "../../../../model/slide/content/Image";
+import updateImage from "../../../../methods/updateContent/updateImage";
 
 type updateImageProps = {
     presentEditor: Editor, currentImage: Image

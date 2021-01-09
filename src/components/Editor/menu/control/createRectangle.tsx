@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addState } from "../../../store/Reducer/editor";
-import { RootState } from "../../../store/Reducer";
-import Editor from "../../../model/Editor";
-import getEditorWithNewRectangle from "../../../methods/addContent/createRectangle";
+import { addState } from "../../../../store/Reducer/editor";
+import { RootState } from "../../../../store/Reducer";
+import Editor from "../../../../model/Editor";
+import getEditorWithNewRectangle from "../../../../methods/addContent/createRectangle";
 
 export const CreateRectangle: React.FC = () => {
     const dispatch = useDispatch();

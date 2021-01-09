@@ -9,5 +9,6 @@ export type Slide = {
     background: string,
     animation: number,
     svgDemo: string,
+    backgroundImage: string,
     contentList: ContentList
 }
