@@ -25,12 +25,12 @@ export const Contents: React.FC = () => {
     const drawContent = (content: Content) => {
         const onClickCallback = () => changeCurrentContentAction(content.uuid);
         if (isCircle(content)) {
-            return <CircleEl circle={content} onClick={onClickCallback.bind(content)} isCurrent={true}
-                             key={content.uuid}/>
+            return <CircleEl circle={content} onCurrentElementChanged={onClickCallback.bind(content)} isCurrent={true}
+                             key={content.uuid} editor={editor}/>
         }
         if (isRectangle(content)) {
             return <RectangleEl rectangle={content} isCurrent={true} key={content.uuid}
-                                onClick={onClickCallback.bind(content)}/>
+                                onCurrentElementChanged={onClickCallback.bind(content)}/>
         }
         if (isTextContainer(content)) {
             return <TextContainerEl editor={editor} textContainer={content} isCurrent={true}

@@ -5,7 +5,8 @@ type DraggableProps = {
     children: ReactElement,
     getElCoordinates: GetElCoordinates,
     setFinalElCoordinates: SetElCoordinates
-    setElCoordinates: SetElCoordinates
+    setElCoordinates: SetElCoordinates,
+    onDraggableStart: () => void
 }
 
 const getActualElementCoordinates = (e: MouseEvent, initialElShift: ElCoordinates): ElCoordinates => {
@@ -15,9 +16,10 @@ const getActualElementCoordinates = (e: MouseEvent, initialElShift: ElCoordinate
     }
 };
 
-export const Draggable = ({children, getElCoordinates, setFinalElCoordinates, setElCoordinates}: DraggableProps) => {
+export const Draggable = ({children, getElCoordinates, setFinalElCoordinates, setElCoordinates, onDraggableStart}: DraggableProps) => {
     const onMouseDownHandler = (e: MouseEvent) => {
         let dragEl = e.target as HTMLElement;
+        onDraggableStart();
         const initialElementCoordinates = getElCoordinates(dragEl);
         let initialElShift: ElCoordinates = {
             x: e.pageX - initialElementCoordinates.x,

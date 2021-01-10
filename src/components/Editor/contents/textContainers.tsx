@@ -17,7 +17,8 @@ export const TextContainerEl = ({textContainer, onClick, editor}: TextContainerP
         fontWeight: textContainer.richText.fontWeight,
         fontStyle: textContainer.richText.fontStyle,
         fontSize: textContainer.richText.fontSize,
-        textDecoration: textContainer.richText.textDecoration
+        textDecoration: textContainer.richText.textDecoration,
+        color: textContainer.richText.color
     };
     let dispatch = useDispatch();
     const changeTextValue = (e: any) => {

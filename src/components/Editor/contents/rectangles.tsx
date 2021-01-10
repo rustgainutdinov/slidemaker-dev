@@ -5,7 +5,7 @@ import {Draggable} from "../control/draggable/draggable";
 
 type RectangleProps = {
     rectangle: Rectangle,
-    onClick: () => void,
+    onCurrentElementChanged: () => void,
     isCurrent: boolean
 }
 
@@ -15,7 +15,7 @@ const getRectangleCoordinates: GetElCoordinates = (el: HTMLElement): ElCoordinat
     return {x: x ? +x : 0, y: y ? +y : 0}
 };
 
-export const RectangleEl = ({rectangle, onClick}: RectangleProps) => {
+export const RectangleEl = ({rectangle, onCurrentElementChanged}: RectangleProps) => {
     const [x, setX] = useState(rectangle.position.x);
     const [y, setY] = useState(rectangle.position.y);
     const setRectangleCoordinates: SetElCoordinates = (elCoordinates: ElCoordinates) => {
@@ -24,11 +24,11 @@ export const RectangleEl = ({rectangle, onClick}: RectangleProps) => {
     };
     return (
         <Draggable getElCoordinates={getRectangleCoordinates} setElCoordinates={setRectangleCoordinates}
-                   setFinalElCoordinates={setRectangleCoordinates}>
+                   setFinalElCoordinates={setRectangleCoordinates} onDraggableStart={onCurrentElementChanged}>
             <rect x={x} y={y} width={rectangle.rectangleSize.width}
                   height={rectangle.rectangleSize.height}
                   strokeWidth={rectangle.border.width}
-                  stroke={rectangle.border.color} fill={rectangle.background} onClick={onClick}/>
+                  stroke={rectangle.border.color} fill={rectangle.background} onClick={onCurrentElementChanged}/>
         </Draggable>
     );
 };
