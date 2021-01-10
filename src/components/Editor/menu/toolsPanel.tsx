@@ -18,8 +18,8 @@ export const ToolsPanel = () => {
             <div className="tools">
                 <div className="main_tools">
                     <li><a href="#" className="tools_button">Файл</a></li>
-                    <li><a href="#" className="tools_button" onClick={() => dispatch(undoState())}>UNDO</a></li>
-                    <li><a href="#" className="tools_button" onClick={() => dispatch(redoState())}>REDO</a></li>
+                    <li><a href="#" className="tools_button" onClick={() => dispatch(undoState())}>Undo</a></li>
+                    <li><a href="#" className="tools_button" onClick={() => dispatch(redoState())}>Redo</a></li>
                     <li><DeletingControl /></li>
                     <li><a href="#" className="tools_button">Фон</a>
                         <SlideBackgroundEl />

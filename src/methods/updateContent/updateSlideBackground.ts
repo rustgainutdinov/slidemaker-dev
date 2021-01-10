@@ -1,6 +1,6 @@
 import Editor from "../../model/Editor";
 
-export function updateSlideBackground(editor: Editor, background: string): Editor {
+export function updateSlideBackground(editor: Editor, background: string, backgroundImage: string): Editor {
     if (!editor.currentSlide) {
         return editor;
     }
@@ -8,8 +8,8 @@ export function updateSlideBackground(editor: Editor, background: string): Edito
         ...editor,
         currentSlide: {
             ...editor.currentSlide,
-            backgroundImage: '',
-            background: background
+            background: background,
+            backgroundImage: backgroundImage
         }
     };
 }
