@@ -1,5 +1,7 @@
 import Editor from "../../../model/Editor";
 import getDefaultEditor from "../../../methods/addContent/getDefaultEditor";
+import updateCircle from "../../../methods/updateContent/updateCircle";
+import Point from "../../../model/slide/content/Point";
 
 export interface EditorState {
     past: Editor[],
@@ -10,6 +12,8 @@ export interface EditorState {
 export const STATE_ADDED = 'STATE_ADDED';
 export const UNDO = 'UNDO';
 export const REDO = 'REDO';
+export const CONTENT_POSITION_UPDATED = 'CONTENT_POSITION_UPDATED';
+
 
 interface AddStateAction {
     type: typeof STATE_ADDED
@@ -24,7 +28,12 @@ interface RedoStateAction {
     type: typeof REDO
 }
 
-export type StateActions = AddStateAction | UndoStateAction | RedoStateAction
+interface ContentPositionUpdatedStateAction {
+    type: typeof CONTENT_POSITION_UPDATED
+    position: Point
+}
+
+export type StateActions = AddStateAction | UndoStateAction | RedoStateAction | ContentPositionUpdatedStateAction
 
 export function addState(editor: Editor): AddStateAction {
     return {
@@ -45,6 +54,13 @@ export function redoState(): RedoStateAction {
     }
 }
 
+export function updateContentPosition(position: Point): ContentPositionUpdatedStateAction {
+    return {
+        type: CONTENT_POSITION_UPDATED,
+        position
+    }
+}
+
 const initialState: EditorState = {
     past: [],
     present: getDefaultEditor(),
@@ -60,6 +76,13 @@ export function editorReducer(
             return {
                 past: [state.present, ...state.past],
                 present: action.editor,
+                future: []
+            };
+        case CONTENT_POSITION_UPDATED:
+            if (!state.present.currentContent) return state;
+            return {
+                past: [state.present, ...state.past],
+                present: updateCircle(state.present, {...state.present.currentContent, position: action.position}),
                 future: []
             };
         case UNDO:

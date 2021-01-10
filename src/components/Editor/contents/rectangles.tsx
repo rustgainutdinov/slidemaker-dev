@@ -28,7 +28,7 @@ export const RectangleEl = ({rectangle, onCurrentElementChanged}: RectangleProps
             <rect x={x} y={y} width={rectangle.rectangleSize.width}
                   height={rectangle.rectangleSize.height}
                   strokeWidth={rectangle.border.width}
-                  stroke={rectangle.border.color} fill={rectangle.background} onClick={onCurrentElementChanged}/>
+                  stroke={rectangle.border.color} fill={rectangle.background}/>
         </Draggable>
     );
 };

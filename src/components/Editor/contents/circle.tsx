@@ -3,15 +3,12 @@ import {Draggable} from "../control/draggable/draggable";
 import {ElCoordinates, GetElCoordinates, SetElCoordinates} from "../control/draggable/helpers";
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {addState} from "../../../store/Reducer/editor";
-import Editor from "../../../model/Editor";
-import updateCircle from "../../../methods/updateContent/updateCircle";
+import {updateContentPosition} from "../../../store/Reducer/editor";
 
 type CircleProps = {
     circle: Circle,
     onCurrentElementChanged: () => void,
     isCurrent: boolean,
-    editor: Editor
 }
 
 const getCircleCoordinates: GetElCoordinates = (el: HTMLElement): ElCoordinates => {
@@ -20,7 +17,7 @@ const getCircleCoordinates: GetElCoordinates = (el: HTMLElement): ElCoordinates 
     return {x: x ? +x : 0, y: y ? +y : 0}
 };
 
-export const CircleEl = ({circle, onCurrentElementChanged, editor}: CircleProps) => {
+export const CircleEl = ({circle, onCurrentElementChanged}: CircleProps) => {
     let dispatch = useDispatch();
     const [x, setX] = useState(circle.position.x);
     const [y, setY] = useState(circle.position.y);
@@ -29,7 +26,7 @@ export const CircleEl = ({circle, onCurrentElementChanged, editor}: CircleProps)
         setY(elCoordinates.y);
     };
     const setFinalCircleCoordinates: SetElCoordinates = (elCoordinates: ElCoordinates) => {
-        dispatch(addState(updateCircle(editor, {...circle, position: {x: elCoordinates.x, y: elCoordinates.y}})));
+        dispatch(updateContentPosition({x: elCoordinates.x, y: elCoordinates.y}));
     };
 
     return (
@@ -37,7 +34,7 @@ export const CircleEl = ({circle, onCurrentElementChanged, editor}: CircleProps)
                    setFinalElCoordinates={setFinalCircleCoordinates} onDraggableStart={onCurrentElementChanged}>
             <circle cx={x} cy={y} r={circle.radius}
                     strokeWidth={circle.border.width}
-                    stroke={circle.border.color} fill={circle.background} onClick={onCurrentElementChanged}/>
+                    stroke={circle.border.color} fill={circle.background}/>
         </Draggable>
     );
 };
