@@ -33,7 +33,7 @@ export const Contents: React.FC = () => {
                 onClick={onClickCallback.bind(content)} />
         }
         if (isTextContainer(content)) {
-            return <TextContainerEl textContainer={content} isCurrent={true} onClick={onClickCallback.bind(content)} key={content.uuid} />
+            return <TextContainerEl textContainer={content} editor={editor} isCurrent={true} onClick={onClickCallback.bind(content)} key={content.uuid} />
         }
         if (isImage(content)) {
             return <ImageEl image={content} isCurrent={true} onClick={onClickCallback.bind(content)} key={content.uuid} />
