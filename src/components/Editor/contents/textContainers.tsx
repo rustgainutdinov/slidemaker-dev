@@ -1,8 +1,8 @@
 import TextContainer from "../../../model/slide/content/TextContainer";
 import {useDispatch} from "react-redux";
 import {addState} from "../../../store/Reducer/editor";
-import changeCurrentContent from "../../../methods/updateContent/changeCurrentContent";
 import Editor from "../../../model/Editor";
+import updateTextContainer from "../../../methods/updateContent/updateTextContainer";
 
 type TextContainerProps = {
     textContainer: TextContainer,
@@ -18,18 +18,21 @@ export const TextContainerEl = ({textContainer, onClick, editor}: TextContainerP
         fontStyle: textContainer.richText.fontStyle,
         fontSize: textContainer.richText.fontSize,
     };
-
     let dispatch = useDispatch();
-    const changeTextValue = () => {
-        dispatch(addState(changeCurrentContent(editor, textContainer.uuid)));
+    const changeTextValue = (e: any) => {
+        const updatedTextContainer: TextContainer = {
+            ...textContainer,
+            richText: {...textContainer.richText, value: e.target.value}
+        };
+        dispatch(addState(updateTextContainer(editor, updatedTextContainer)));
     };
 
     return (
         <>
             <foreignObject onClick={onClick} width="500" height="300" x={textContainer.position.x}
                            y={textContainer.position.y} fill={textContainer.richText.color}>
-                <textarea placeholder='Input text' style={textStyle}
-                          id="input" onBlur={changeTextValue}>{textContainer.richText.value}</textarea>
+                <textarea placeholder='Введите текст' style={textStyle}
+                          id="input" onBlur={changeTextValue} defaultValue={textContainer.richText.value}/>
             </foreignObject>
         </>
     );

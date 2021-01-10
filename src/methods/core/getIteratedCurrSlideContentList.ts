@@ -6,9 +6,9 @@ export function getIteratedCurrSlideContentList(editor: Editor): Array<Content> 
         return [];
     }
     let sortedContents = [];
-    let layer = 0;
     for (const key in editor.currentSlide.contentList) {
-        sortedContents[layer++] = editor.currentSlide.contentList[key];
+        const content = editor.currentSlide.contentList[key];
+        sortedContents[content.layer] = content;
     }
     return sortedContents;
 }
