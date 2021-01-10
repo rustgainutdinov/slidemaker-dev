@@ -11,6 +11,6 @@ export const CreateImage: React.FC = () => {
     );
     const updateStateCreatingImage = () => dispatch(addState(getEditorWithNewImage(presentEditor)));
     return (
-        <button onClick={updateStateCreatingImage}>Картинка</button>
+        <button className="create_element image" onClick={updateStateCreatingImage}>&lt;image&gt;</button>
     );
 };

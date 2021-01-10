@@ -12,6 +12,6 @@ export const CreateRectangle: React.FC = () => {
     );
     const updateStateCreatingRectangle = () => dispatch(addState(getEditorWithNewRectangle(presentEditor)));
     return (
-        <button onClick={updateStateCreatingRectangle}>Квадрат</button>
+        <button className="create_element rectangle" onClick={updateStateCreatingRectangle}></button>
     );
 };
