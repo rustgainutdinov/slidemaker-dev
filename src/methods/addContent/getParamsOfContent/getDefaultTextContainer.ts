@@ -11,7 +11,7 @@ export function getDefaultTextContainer(): TextContainer {
         width: 400,
         richText: {
             color: '#000000', fontWeight: 600, fontFamily: 'Roboto',
-            fontSize: 40, fontStyle: 'normal', value: 'Текст'
+            fontSize: 40, fontStyle: 'normal', value: 'Текст', textDecoration: 'none'
         },
         textContainer: undefined,
         layer: 0

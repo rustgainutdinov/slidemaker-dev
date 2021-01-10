@@ -12,6 +12,6 @@ export const CreateCircle: React.FC = () => {
     );
     const updateStateCreatingCircle = () => dispatch(addState(getEditorWithNewCircle(presentEditor)));
     return (
-        <button onClick={updateStateCreatingCircle}>Круг</button>
+        <button className="create_element circle" onClick={updateStateCreatingCircle}></button>
     );
 };

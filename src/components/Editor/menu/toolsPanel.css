@@ -1,0 +1,26 @@
+.title {
+    margin-bottom: 20px;
+    font-size: 400;
+    color:rgba(250, 250, 250, 0.6);
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.title input {
+    border: none;
+    background: none;
+    outline: none;
+    color:rgba(250, 250, 250, 0.6);
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.tools {
+    display: flex;
+}
+
+.main_tools {
+    display: flex;
+}

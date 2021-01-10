@@ -23,7 +23,7 @@ export const SlideBackgroundEl = () => {
             event.target.value
         );
         console.log(presentEditor.currentSlide)
-    } 
+    }
     const handleSlideBackgroundImageChange = (event: any) => {
         setBackground('');
         setBackgroundImage(event.target.value);
@@ -33,7 +33,7 @@ export const SlideBackgroundEl = () => {
     }
 
     return (
-        <ul className="dropdown">
+        <ul className="dropdown bg">
             <li>
                 <a href="#" className="slideBackground">
                     <input type="text" className="param_input_label" value={background} onInput={handleSlideBackgroundChange} />
