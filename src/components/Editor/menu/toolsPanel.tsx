@@ -8,6 +8,8 @@ import { ShapeTools } from "./shapeTools/shapeTools";
 import { TextTools } from "./textTools/textTools";
 import './toolsPanel.css'
 import { PresentationEl } from "./presentationName";
+import { File } from "./file/file";
+
 
 export const ToolsPanel = () => {
     const dispatch = useDispatch();
@@ -24,6 +26,7 @@ export const ToolsPanel = () => {
                     <li><a href="#" className="tools_button">Фон</a>
                         <SlideBackgroundEl />
                     </li>
+                    <File/>
                     <ControlEl />
                 </div>
                 <ShapeTools />
