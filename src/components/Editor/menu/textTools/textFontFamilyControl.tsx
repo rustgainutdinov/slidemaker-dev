@@ -25,7 +25,7 @@ export const TextFontFamily = ({ presentEditor, currentTextContainer }: updateTe
 
     return (
         <li>
-            <select className="select" onInput={handleSelectFontFamily}>
+            <select className="select" onInput={handleSelectFontFamily} value={currentTextContainer.richText.fontFamily}>
                 <option value='Arial'>Arial</option>
                 <option value='Georgia'>Georgia</option>
                 <option value='Roboto'>Roboto</option>
