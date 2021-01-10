@@ -54,46 +54,6 @@ section {
     align-items: center;
 }
 
-.logo_box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80px;
-    width: 80px;
-    background-color: #FDCE5D;
-    margin: 0 37px 0 30px;
-    font-size: 64px;
-    border-radius: 10px;
-}
-
-.tools {
-    display: flex;
-}
-
-.text_tools {
-    display: flex;
-    align-items: center;
-}
-
-.title {
-    margin-bottom: 20px;
-    font-size: 400;
-    color:rgba(250, 250, 250, 0.6);
-    font-style: normal;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-}
-
-.title input {
-    border: none;
-    background: none;
-    outline: none;
-    color:rgba(250, 250, 250, 0.6);
-    font-style: normal;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-}
-
 .tools_button {
     display: flex;
     align-items: center;
@@ -108,46 +68,6 @@ section {
     text-decoration: none;
     border:none;
     outline: none;
-}
-
-.edit_panel {
-   margin-left: 20px;
-   border-right: 2px solid  #FDCE5D; 
-}
-
-.edit_tools_box:first-child {
-    margin-bottom: 10px;
-}
-
-.edit_tools {
-    display: flex;
-}
-
-.edit_tools:first-child {
-    margin-bottom: 10px;
-}
-
-.edit_title {
-    font-size: 400;
-    color:rgba(250, 250, 250, 0.6);
-    font-style: normal;
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-
-.edit_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #0184F2;
-    height: 23px;
-    width: 85px;
-    margin-right: 23px;
-    border-radius: 8px;
-    color: rgba(250, 250, 250);
-    font-size: 12px;
-    text-decoration: none; 
 }
 
 li ul
@@ -166,36 +86,10 @@ ul li a
     margin-left: 1px;
 }
 
-ul li a button {
-    min-width: 100%;
-    background: #2C5463;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 5px 10px;
-    display: block;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-ul li:first-child a {
-    border-radius: 10px 10px 0 0;
-}
-
-ul li:last-child a {
-    border-radius: 0 0  10px 10px;
-}
-
 li:hover .bg 
 {
     display: block;
     position: absolute;
-}
-
-li:hover li
-{
-    float: none;
-    font-size: 16px;
 }
 
 li:hover a 
@@ -204,18 +98,13 @@ li:hover a
     color: 	#808080;
 }
 
+/* фон */
+
 .tools_button:hover
 {
     background-color: #FDCE5D;
     color: 	#808080;
 }
-
-li:hover li a:hover 
-{
-    background-color: #0184F2;
-    color: 	 #ffffff;
-}
-
 
 .working_space {
     display: flex;
@@ -286,99 +175,6 @@ li:hover li a:hover
     padding-top: 2px;
     font-size: 24px;
     margin-right: 5px
-}
-
-#edit_params {
-    background: rgba(102, 102, 102, 0.5);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-}
-
-#popup_rect {
-    width: 200px;
-    height: 55vh;
-    text-align: center;
-    padding: 15px;
-    border: 3px solid #0000cc;
-    border-radius: 10px;
-    color: #0000cc;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    background: #fff;
-}
-
-#popup_circle {
-    width: 200px;
-    height: 50vh;
-    text-align: center;
-    padding: 15px;
-    border: 3px solid #0000cc;
-    border-radius: 10px;
-    color: #0000cc;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    background: #fff;
-}
-
-#popup_text {
-    width: 200px;
-    height: 50vh;
-    text-align: center;
-    padding: 15px;
-    border: 3px solid #0000cc;
-    border-radius: 10px;
-    color: #0000cc;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    background: #fff;
-}
-
-#edit_params:target {
-    display: block;
-}
-
-.close {
-    display: inline-block;
-    border: 1px solid #0000cc;
-    color: #0000cc;
-    padding: 0 12px;
-    margin: 10px;
-    text-decoration: none;
-    background: #f2f2f2;
-    font-size: 12pt;
-    cursor:pointer;
-  }
-
-.close:hover {
-    background: #e6e6ff;
-}
-
-.params_field {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.param_name {
-    text-align: start;
-    margin-right: 20px;
 }
 
 .param_input_label {

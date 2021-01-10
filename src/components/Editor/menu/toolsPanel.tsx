@@ -7,13 +7,14 @@ import { ControlEl } from "./control";
 import { ShapeTools } from "./shapeTools/shapeTools";
 import { TextTools } from "./textTools/textTools";
 import './toolsPanel.css'
+import { PresentationEl } from "./presentationName";
 
 export const ToolsPanel = () => {
     const dispatch = useDispatch();
 
     return (
         <div className="tools_panel">
-            <h1 className="title">Самая лучшая презентация</h1>
+            <h1 className="title"><PresentationEl /></h1>
             <div className="tools">
                 <div className="main_tools">
                     <li><a href="#" className="tools_button">Файл</a></li>

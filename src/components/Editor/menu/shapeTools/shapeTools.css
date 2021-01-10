@@ -28,7 +28,7 @@
 
 .dropDown {
     position: absolute;
-    top: 92px;
+    padding-top: 17px;
 }
 
 .active {

@@ -13,6 +13,11 @@
     outline: none;
 }
 
+.text_tools {
+    display: flex;
+    align-items: center;
+}
+
 .select:focus {
     background-color: #fff;
     color: 	#808080;
