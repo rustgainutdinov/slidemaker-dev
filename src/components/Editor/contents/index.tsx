@@ -47,7 +47,7 @@ export const Contents: React.FC = () => {
                 <image href={editor.currentSlide?.backgroundImage} height="100%" width="100%" />
             </>
         )
-    }
+    };
 
     return (
         <svg width={1000} height="75vh" id={"currentSlideContent"}>
