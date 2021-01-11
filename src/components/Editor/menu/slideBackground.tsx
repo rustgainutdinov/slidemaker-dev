@@ -22,12 +22,6 @@ export const SlideBackgroundEl = () => {
         updateStateUpdatingSlideBackground(
             event.target.value
         );
-        setBackgroundImage(presentEditor.currentSlide?.backgroundImage)
-        if (background != undefined && backgroundImage != undefined) {
-            updateStateUpdatingSlideBackground(
-                background, backgroundImage
-            );
-        }
     }
     const handleSlideBackgroundImageChange = (event: any) => {
         setBackgroundImage(event.target.value);
