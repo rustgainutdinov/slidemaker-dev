@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import Editor from "../../../../model/Editor";
 import { RootState } from "../../../../store/Reducer";
 
-export const File = () => {
+export const Export = () => {
   const presentEditor: Editor = useSelector((state: RootState) => state.editorReducer.present);
 
   const exportToJson = () => {

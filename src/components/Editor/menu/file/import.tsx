@@ -27,14 +27,14 @@ export const Import = () => {
         fileReader.onloadend = () => {
             if (fileReader.result != null) {
                 const newEditor = JSON.parse(fileReader.result.toString());
-
+                console.log(newEditor);
                 const editor: Editor = {
                     ...newEditor
                 }
                 updateStateUpdatingEditor(editor);
             }
         }
-        fileReader.readAsBinaryString(file);
+        fileReader.readAsText(file);
     }
     return (
         <>
