@@ -8,7 +8,7 @@ import { ShapeTools } from "./shapeTools/shapeTools";
 import { TextTools } from "./textTools/textTools";
 import './toolsPanel.css'
 import { PresentationEl } from "./presentationName";
-import { Export } from "./file/file";
+import { Export } from "./file/export";
 import { Import } from "./file/import";
 
 
