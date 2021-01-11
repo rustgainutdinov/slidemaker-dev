@@ -22,7 +22,7 @@ describe('createRectangleTest', () => {
         if (editor.currentContent == undefined) return
         expect(newEditor.currentContent.richText).toStrictEqual({
             color: '#000000', fontWeight: 600, fontFamily: 'Roboto',
-            fontSize: 40, fontStyle: 'normal', value: 'Текст'
+            fontSize: 40, fontStyle: 'normal', value: 'Текст', textDecoration: 'none'
         })
         expect(newEditor.currentContent.width).toBe(400);
         expect(newEditor.currentContent.position).toStrictEqual({

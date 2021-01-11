@@ -1,4 +1,3 @@
-import { getDefaultImage } from "../../methods/addContent/getParamsOfContent/getDefaultImage";
 import { getDefaultRectangle } from "../../methods/addContent/getParamsOfContent/getDefaultRectangle";
 import { getDefaultTextContainer } from "../../methods/addContent/getParamsOfContent/getDefaultTextContainer";
 import { isTextContainer } from "../../methods/typeGuardMethods/isTextContainer";

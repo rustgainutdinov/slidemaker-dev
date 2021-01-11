@@ -12,7 +12,8 @@ describe('getDefaultContentTests', () => {
             fontFamily: 'Roboto',
             fontSize: 40,
             fontStyle: 'normal',
-            value: 'Текст'
+            value: 'Текст',
+            textDecoration: 'none'
         });
     });
 })
