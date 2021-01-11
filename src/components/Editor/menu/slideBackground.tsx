@@ -11,20 +11,34 @@ export const SlideBackgroundEl = () => {
 
     const updateStateUpdatingSlideBackground = (color: string, backgroundImage: string) => dispatch(addState(updateSlideBackground(presentEditor, color, backgroundImage)));
 
-    const [background, setBackground] = useState('#fff');
-    const [backgroundImage, setBackgroundImage] = useState('');
+    const [background, setBackground] = useState(presentEditor.currentSlide?.background);
+    const [backgroundImage, setBackgroundImage] = useState(presentEditor.currentSlide?.backgroundImage);
 
     const handleSlideBackgroundChange = (event: any) => {
         setBackground(event.target.value);
+        setBackgroundImage(presentEditor.currentSlide?.backgroundImage)
+        if (background != undefined && backgroundImage != undefined) {
+            updateStateUpdatingSlideBackground(
+                background, backgroundImage
+            );
+        }
     }
     const handleSlideBackgroundImageChange = (event: any) => {
         setBackgroundImage(event.target.value);
+        setBackground(presentEditor.currentSlide?.background);
+        if (background != undefined && backgroundImage != undefined) {
+            updateStateUpdatingSlideBackground(
+                background, backgroundImage
+            );
+        }
     }
 
     const changeBg = () => {
-        updateStateUpdatingSlideBackground(
-            background, backgroundImage
-        );
+        if (background != undefined && backgroundImage != undefined) {
+            updateStateUpdatingSlideBackground(
+                background, backgroundImage
+            );
+        }
     }
 
     return (
@@ -32,10 +46,16 @@ export const SlideBackgroundEl = () => {
             <li>
                 <a href="#" className="slideBackground">
                     <p>Цвет Фона</p>
-                    <input type="text" className="param_input_label" value={background} onInput={handleSlideBackgroundChange} />
+                    <input className="colorPaletteForBg" type="color" list="colorList"
+                        value={presentEditor.currentSlide?.background} onInput={handleSlideBackgroundChange} />
+                    <datalist id="colorList">
+                        <option value="#ff0000" label="Красный" />
+                        <option value="#008000" label="Зелёный" />
+                        <option value="#0000ff" label="Синий" />
+                    </datalist>
 
                     <p>Картинка</p>
-                    <input type="text" className="param_input_label" value={backgroundImage} onInput={handleSlideBackgroundImageChange} />
+                    <input type="text" className="param_input_label" value={presentEditor.currentSlide?.backgroundImage} onInput={handleSlideBackgroundImageChange} />
 
                     <button onClick={changeBg}>Применить</button>
                 </a>
