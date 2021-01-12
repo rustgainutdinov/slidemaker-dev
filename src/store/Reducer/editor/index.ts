@@ -8,6 +8,8 @@ import {isRectangle} from "../../../methods/typeGuardMethods/isRectangle";
 import Rectangle from "../../../model/slide/content/shape/Rectangle";
 import {isTextContainer} from "../../../methods/typeGuardMethods/isTextContainer";
 import TextContainer from "../../../model/slide/content/TextContainer";
+import Image from "../../../model/slide/content/Image";
+import {isImage} from "../../../methods/typeGuardMethods/isImage";
 
 export interface EditorState {
     past: Editor[],
@@ -22,6 +24,7 @@ export const CONTENT_POSITION_UPDATED = 'CONTENT_POSITION_UPDATED';
 export const CIRCLE_SIZE_UPDATED = 'CIRCLE_SIZE_UPDATED';
 export const RECTANGLE_SIZE_UPDATED = 'RECTANGLE_SIZE_UPDATED';
 export const TEXT_CONTAINER_SIZE_UPDATED = 'TEXT_CONTAINER_SIZE_UPDATED';
+export const IMAGE_CONTAINER_SIZE_UPDATED = 'v';
 
 
 interface AddStateAction {
@@ -59,6 +62,12 @@ interface UpdateTextContainerSizeStateAction {
     heightOffset: number,
 }
 
+interface UpdateImageSizeStateAction {
+    type: typeof IMAGE_CONTAINER_SIZE_UPDATED
+    widthOffset: number,
+    heightOffset: number,
+}
+
 export type StateActions =
     AddStateAction
     | UndoStateAction
@@ -66,7 +75,8 @@ export type StateActions =
     | UpdateContentPositionStateAction
     | UpdateCircleSizeStateAction
     | UpdateRectangleSizeStateAction
-    | UpdateTextContainerSizeStateAction;
+    | UpdateTextContainerSizeStateAction
+    | UpdateImageSizeStateAction;
 
 export function addState(editor: Editor): AddStateAction {
     return {
@@ -112,6 +122,14 @@ export function updateRectangleSize(widthOffset: number, heightOffset: number): 
 export function updateTextContainerSize(widthOffset: number, heightOffset: number): UpdateTextContainerSizeStateAction {
     return {
         type: TEXT_CONTAINER_SIZE_UPDATED,
+        widthOffset,
+        heightOffset
+    }
+}
+
+export function updateImageSize(widthOffset: number, heightOffset: number): UpdateImageSizeStateAction {
+    return {
+        type: IMAGE_CONTAINER_SIZE_UPDATED,
         widthOffset,
         heightOffset
     }
@@ -167,6 +185,20 @@ export function editorReducer(
             return {
                 past: [state.present, ...state.past],
                 present: updateEditorContent(state.present, newRectangle),
+                future: []
+            };
+        case IMAGE_CONTAINER_SIZE_UPDATED:
+            if (!state.present.currentContent || !isImage(state.present.currentContent)) return state;
+            let newImage: Image = {
+                ...state.present.currentContent,
+                size: {
+                    width: state.present.currentContent.size.width + action.widthOffset,
+                    height: state.present.currentContent.size.height + action.heightOffset
+                }
+            };
+            return {
+                past: [state.present, ...state.past],
+                present: updateEditorContent(state.present, newImage),
                 future: []
             };
         case TEXT_CONTAINER_SIZE_UPDATED:

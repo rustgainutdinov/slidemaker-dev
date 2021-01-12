@@ -14,7 +14,6 @@ export const RectangleEl = ({rectangle, onCurrentElementChanged, isCurrent}: Rec
         setPosition({x: elCoordinates.x, y: elCoordinates.y});
     const setFinalRectangleCoordinates: SetHtmlElCoordinates = (elCoordinates: ElCoordinates) =>
         dispatch(updateContentPosition({x: elCoordinates.x, y: elCoordinates.y}));
-
     const changeRectangleSize: ChangeElSize = (widthOffset: number, heightOffset: number) =>
         dispatch(updateRectangleSize(widthOffset, heightOffset));
 

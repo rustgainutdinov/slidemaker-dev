@@ -39,7 +39,7 @@ export const Contents: React.FC = () => {
                                     onCurrentElementChanged={onClickCallback.bind(content)} key={content.uuid}/>
         }
         if (isImage(content)) {
-            return <ImageEl image={content} isCurrent={isCurrent} onClick={onClickCallback.bind(content)}
+            return <ImageEl image={content} isCurrent={isCurrent} onCurrentElementChanged={onClickCallback.bind(content)}
                             key={content.uuid}/>
         }
     };
