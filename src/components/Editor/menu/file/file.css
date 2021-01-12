@@ -12,6 +12,7 @@ label {
 .preWatch {
     position: absolute;
     display: none;
+    background-color: rgb(160, 160, 160);
     align-items: center;
     justify-content: center;
     width: 100%;
