@@ -20,8 +20,6 @@ export const SelectedOutline = ({children, width, height, position, changeSize, 
     const setDotCoordinates: SetHtmlElCoordinates = (elCoordinates: ElCoordinates) =>
         setPosition({x: elCoordinates.x, y: elCoordinates.y});
     const setFinalDotCoordinates: SetHtmlElCoordinates = (elCoordinates: ElCoordinates) => {
-        console.log(elCoordinates.x - initialDot.x);
-        console.log(elCoordinates.y - initialDot.y);
         changeSize(elCoordinates.x - initialDot.x, elCoordinates.y - initialDot.y);
     };
     let resizeDotStyle = getResizeDotStyle(positionState);

@@ -1,4 +1,5 @@
-.image_tools  {
+.image_tools {
+    border-radius: 10px;
     display: flex;
     align-items: center;
 }
@@ -7,7 +8,8 @@
     padding: 10px 15px;
     background-color: rgba(255, 255, 255, 0.692);
     border: none;
-    outline: none
+    outline: none;
+    border-radius: 10px 0 0 10px;
 }
 
 .image_tools button {
@@ -20,8 +22,9 @@
     outline: none;
     transition: .2s;
     box-sizing: border-box;
+    border-radius: 0 10px 10px 0;
 }
 
 .image_tools button:hover {
-    background-color :#FDCE5D;
+    background-color: #FDCE5D;
 }

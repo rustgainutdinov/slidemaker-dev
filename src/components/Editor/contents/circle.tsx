@@ -25,6 +25,7 @@ export const CircleEl = ({circle, onCurrentElementChanged, isCurrent}: CirclePro
                        setFinalElCoordinates={setFinalCircleCoordinates} onDraggableStart={onCurrentElementChanged}>
                 <circle cx={position.x} cy={position.y} r={circle.radius}
                         strokeWidth={circle.border.width}
+                        onClick={onCurrentElementChanged}
                         stroke={circle.border.color} fill={circle.background}/>
             </Draggable>
         </SelectedOutline>

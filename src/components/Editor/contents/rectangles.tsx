@@ -26,6 +26,7 @@ export const RectangleEl = ({rectangle, onCurrentElementChanged, isCurrent}: Rec
                 <rect x={position.x} y={position.y} width={rectangle.rectangleSize.width}
                       height={rectangle.rectangleSize.height}
                       strokeWidth={rectangle.border.width}
+                      onClick={onCurrentElementChanged}
                       stroke={rectangle.border.color} fill={rectangle.background}/>
             </Draggable>
         </SelectedOutline>
