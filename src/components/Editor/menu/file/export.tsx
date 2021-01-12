@@ -41,7 +41,6 @@ export const Export = () => {
 
   const changeCurrentSlideIdInc = () => {
     slideIndex = slideShow;
-    console.log(slideIndex);
     if (presentEditor.currentPresentation.slides[slideIndex + 1] != null) {
       slideIndex++;
     }
