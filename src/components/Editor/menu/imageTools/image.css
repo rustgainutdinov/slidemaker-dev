@@ -1,0 +1,27 @@
+.image_tools  {
+    display: flex;
+    align-items: center;
+}
+
+.image_tools input {
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.692);
+    border: none;
+    outline: none
+}
+
+.image_tools button {
+    border-left: 1px solid #000;
+    border-right: none; 
+    border-top: none; 
+    border-bottom: none; 
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.692);
+    outline: none;
+    transition: .2s;
+    box-sizing: border-box;
+}
+
+.image_tools button:hover {
+    background-color :#FDCE5D;
+}
