@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import Editor from "../../../../model/Editor";
 import { RootState } from "../../../../store/Reducer";
 import { SvgContentList } from "../../svg/list";
-import { exportToJson } from "./file";
+import { exportToJson } from "./saveFile";
 
 export const Export = () => {
   const presentEditor: Editor = useSelector((state: RootState) => state.editorReducer.present);

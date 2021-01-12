@@ -12,7 +12,7 @@ export function getDefaultImage(): Image {
             width: 300,
             height: 380
         },
-        url: "https://www.imgonline.com.ua/examples/bee-on-daisy.jpg",
+        url: "https://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
         image: undefined,
         layer: 0
     };

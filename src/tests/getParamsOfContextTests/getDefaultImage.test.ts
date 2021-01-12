@@ -9,7 +9,7 @@ describe('getDefaultImageTests', () => {
     });
 
     test('getDefaultImageUrlTests', () => {
-        expect(getDefaultImage().url).toBe('https://www.imgonline.com.ua/examples/bee-on-daisy.jpg')
+        expect(getDefaultImage().url).toBe('https://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg')
     });
 
     test('getDefaultImageSizeTests', () => {
