@@ -173,6 +173,7 @@ li:hover .bg {
 
 .param_input_label {
     width: 80px;
+    margin-bottom: 15px;
 }
 
 .colorPaletteForBg {

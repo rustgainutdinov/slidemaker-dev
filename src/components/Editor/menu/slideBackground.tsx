@@ -17,7 +17,6 @@ export const SlideBackgroundEl = () => {
     const updateStateUpdatingSlideBackgroundImage = (backgroundImage: string) =>
         dispatch(addState(updateSlideBackgroundImage(presentEditor, backgroundImage)));
 
-    const [backgroundImage, setBackgroundImage] = useState(presentEditor.currentSlide?.backgroundImage);
 
     const handleSlideBackgroundChange = (event: any) => {
         updateStateUpdatingSlideBackground(
@@ -25,18 +24,9 @@ export const SlideBackgroundEl = () => {
         );
     }
     const handleSlideBackgroundImageChange = (event: any) => {
-        setBackgroundImage(event.target.value);
         updateStateUpdatingSlideBackgroundImage(
             event.target.value
         );
-    }
-
-    const changeBg = () => {
-        if (backgroundImage != undefined) {
-            updateStateUpdatingSlideBackgroundImage(
-                backgroundImage
-            );
-        }
     }
 
     return (
@@ -49,7 +39,6 @@ export const SlideBackgroundEl = () => {
                     <ColorPalette />
                     <p>Картинка</p>
                     <input type="text" className="param_input_label" value={presentEditor.currentSlide?.backgroundImage} onInput={handleSlideBackgroundImageChange} />
-                    <button onClick={changeBg}>Применить</button>
                 </a>
             </li>
         </ul>
