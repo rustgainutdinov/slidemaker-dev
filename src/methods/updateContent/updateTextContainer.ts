@@ -1,10 +1,8 @@
 import Editor from "../../model/Editor";
-import Content from "../../model/slide/content/Content";
-import { updateEditorContent } from "../core/updateEditorContent";
-import {isTextContainer} from "../typeGuardMethods/isTextContainer";
+import {updateEditorContent} from "../core/updateEditorContent";
+import TextContainer from "../../model/slide/content/TextContainer";
 
-function updateTextContainer(editor: Editor, newTextContainer: Content): Editor {
-    if (!editor.currentContent || !isTextContainer(editor.currentContent)) return editor;
+function updateTextContainer(editor: Editor, newTextContainer: TextContainer): Editor {
     return updateEditorContent(editor, newTextContainer);
 }
 

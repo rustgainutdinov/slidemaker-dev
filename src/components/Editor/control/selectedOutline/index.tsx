@@ -1,60 +1,27 @@
 import * as React from "react";
-import {ReactElement, useEffect, useState} from "react";
-import Point from "../../../../model/slide/content/Point";
+import {useEffect, useState} from "react";
 import {Draggable} from "../draggable/draggable";
-import {ElCoordinates, GetElCoordinates, SetElCoordinates} from "../draggable/helpers";
-import {ChangeElSize} from "./helpers";
-
-type SelectedOutlineProps = {
-    children: ReactElement,
-    width: number,
-    height: number,
-    position: Point,
-    changeSize: ChangeElSize,
-    isCurrent: boolean
-}
-
-const getDotCoordinates: GetElCoordinates = (el: HTMLElement): ElCoordinates => {
-    let style = el.style;
-    let x = style.getPropertyValue('x');
-    let y = style.getPropertyValue('y');
-    return {x: x ? +(x.substr(0, x.length - 2)) : 0, y: y ? +(y.substr(0, y.length - 2)) : 0}
-};
+import {ElCoordinates, SetHtmlElCoordinates} from "../draggable/helpers";
+import {getDotCoordinates, getOutlineStyles, getResizeDotStyle, SelectedOutlineProps} from "./helpers";
 
 export const SelectedOutline = ({children, width, height, position, changeSize, isCurrent}: SelectedOutlineProps) => {
-    let outlineStyle = {
-        width: width + 20,
-        height: height + 20,
-        strokeWidth: 2,
-        stroke: '#cecece',
-        fill: 'rgba(0,0,0,0)',
-        x: position.x - 10,
-        y: position.y - 10,
-        strokeDasharray: "5,5"
-    };
-    const [x, setX] = useState(outlineStyle.x + outlineStyle.width - 7);
-    const [y, setY] = useState(outlineStyle.y + outlineStyle.height - 7);
-
+    let outlineStyle = getOutlineStyles(width, height, position);
+    const [positionState, setPosition] = useState({
+        x: outlineStyle.x + outlineStyle.width - 7,
+        y: outlineStyle.y + outlineStyle.height - 7
+    });
     useEffect(() => {
-        setX(outlineStyle.x + outlineStyle.width - 7);
-        setY(outlineStyle.y + outlineStyle.height - 7);
+        setPosition({
+            x: outlineStyle.x + outlineStyle.width - 7,
+            y: outlineStyle.y + outlineStyle.height - 7
+        })
     }, [position]);
-
-    let initialDotX = x;
-    let initialDotY = y;
-    const setDotCoordinates: SetElCoordinates = (elCoordinates: ElCoordinates) => {
-        setX(elCoordinates.x);
-        setY(elCoordinates.y);
-    };
-    const setFinalDotCoordinates: SetElCoordinates = (elCoordinates: ElCoordinates) => {
-        changeSize(elCoordinates.x - initialDotX, elCoordinates.y - initialDotY)
-    };
-    let resizeDotStyle = {
-        fill: '#cecece',
-        width: 14,
-        height: 14,
-        x, y,
-    };
+    let initialDot = position;
+    const setDotCoordinates: SetHtmlElCoordinates = (elCoordinates: ElCoordinates) =>
+        setPosition({x: elCoordinates.x, y: elCoordinates.y});
+    const setFinalDotCoordinates: SetHtmlElCoordinates = (elCoordinates: ElCoordinates) =>
+        changeSize(elCoordinates.x - initialDot.x, elCoordinates.y - initialDot.y);
+    let resizeDotStyle = getResizeDotStyle(positionState);
 
     return <>
         {isCurrent ? [

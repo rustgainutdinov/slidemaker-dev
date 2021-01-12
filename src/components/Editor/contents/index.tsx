@@ -14,6 +14,7 @@ import changeCurrentContent from "../../../methods/updateContent/changeCurrentCo
 import {getIteratedCurrSlideContentList} from "../../../methods/core/getIteratedCurrSlideContentList";
 import {isImage} from "../../../methods/typeGuardMethods/isImage";
 import {ImageEl} from './image';
+import {SlideBackground} from "../svg/slideBackground";
 
 export const Contents: React.FC = () => {
     const editor: Editor = useSelector((state: RootState) => state.editorReducer.present);
@@ -26,8 +27,8 @@ export const Contents: React.FC = () => {
         const onClickCallback = () => changeCurrentContentAction(content.uuid);
         const isCurrent = editor.currentContent ? content.uuid === editor.currentContent.uuid : false;
         if (isCircle(content)) {
-            return <CircleEl circle={content} onCurrentElementChanged={onClickCallback.bind(content)} isCurrent={isCurrent}
-                             key={content.uuid}/>
+            return <CircleEl circle={content} onCurrentElementChanged={onClickCallback.bind(content)}
+                             isCurrent={isCurrent} key={content.uuid}/>
         }
         if (isRectangle(content)) {
             return <RectangleEl rectangle={content} isCurrent={isCurrent} key={content.uuid}
@@ -42,19 +43,9 @@ export const Contents: React.FC = () => {
                             key={content.uuid}/>
         }
     };
-
-    const drawBackground = () => {
-        return (
-            <>
-                <rect width={'100%'} height={'100%'} fill={editor.currentSlide?.background}/>
-                <image href={editor.currentSlide?.backgroundImage} height="100%" width="100%"/>
-            </>
-        )
-    };
-
     return (
-        <svg width={1000} height="75vh" id={"currentSlideContent"}>
-            {drawBackground()}
+        <svg viewBox="0 0 900 600" width="900px" height="600px" id={"currentSlideContent"}>
+            {editor.currentSlide ? <SlideBackground slide={editor.currentSlide}/> : null}
             {getIteratedCurrSlideContentList(editor).map(drawContent)}
         </svg>
     );
