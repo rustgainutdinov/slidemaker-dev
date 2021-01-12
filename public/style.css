@@ -83,6 +83,10 @@ textarea {
     outline: none;
 }
 
+.tools_button.tools_icon {
+    width: 50px;
+}
+
 li ul {
     display: none;
     width: 107px;
