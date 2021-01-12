@@ -25,7 +25,8 @@ export const ColorEl = ({ presentEditor, currentTextContainer }: updateTextConta
 
     return (
         <li>
-            <input className="colorPalette" type="color" list="colorList" onInput={handleSelectTextColor} />
+            <input className="colorPalette" type="color" list="colorList"
+            value={currentTextContainer.richText.color} onInput={handleSelectTextColor} />
             <datalist id="colorList">
                 <option value="#ff0000" label="Красный" />
                 <option value="#008000" label="Зелёный" />

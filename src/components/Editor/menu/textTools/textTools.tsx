@@ -30,8 +30,13 @@ export const TextTools: React.FC = () => {
     }
 
     return (
-        <div className="text_tools">
-            {getUpdateContentControlElements(presentEditor)}
-        </div>
+        <>
+            <div className="text_tools">
+                {getUpdateContentControlElements(presentEditor)}
+            </div>
+            <div>
+                
+            </div>
+        </>
     )
 }

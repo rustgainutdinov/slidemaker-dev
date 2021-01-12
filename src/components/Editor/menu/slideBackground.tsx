@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateSlideBackground } from "../../../methods/updateContent/updateSlideBackground";
+import { updateSlideBackgroundImage } from "../../../methods/updateContent/updateSlideBackgroundImage";
 import Editor from "../../../model/Editor";
 import { RootState } from "../../../store/Reducer";
 import { addState } from "../../../store/Reducer/editor";
@@ -9,22 +10,32 @@ export const SlideBackgroundEl = () => {
     const dispatch = useDispatch();
     const presentEditor: Editor = useSelector((state: RootState) => state.editorReducer.present);
 
-    const updateStateUpdatingSlideBackground = (color: string, backgroundImage: string) => dispatch(addState(updateSlideBackground(presentEditor, color, backgroundImage)));
+    const updateStateUpdatingSlideBackground = (background: string) =>
+        dispatch(addState(updateSlideBackground(presentEditor, background)));
 
-    const [background, setBackground] = useState('#fff');
-    const [backgroundImage, setBackgroundImage] = useState('');
+    const updateStateUpdatingSlideBackgroundImage = (backgroundImage: string) =>
+        dispatch(addState(updateSlideBackgroundImage(presentEditor, backgroundImage)));
+
+    const [backgroundImage, setBackgroundImage] = useState(presentEditor.currentSlide?.backgroundImage);
 
     const handleSlideBackgroundChange = (event: any) => {
-        setBackground(event.target.value);
+        updateStateUpdatingSlideBackground(
+            event.target.value
+        );
     }
     const handleSlideBackgroundImageChange = (event: any) => {
         setBackgroundImage(event.target.value);
+        updateStateUpdatingSlideBackgroundImage(
+            event.target.value
+        );
     }
 
     const changeBg = () => {
-        updateStateUpdatingSlideBackground(
-            background, backgroundImage
-        );
+        if (backgroundImage != undefined) {
+            updateStateUpdatingSlideBackgroundImage(
+                backgroundImage
+            );
+        }
     }
 
     return (
@@ -32,11 +43,16 @@ export const SlideBackgroundEl = () => {
             <li>
                 <a href="#" className="slideBackground">
                     <p>Цвет Фона</p>
-                    <input type="text" className="param_input_label" value={background} onInput={handleSlideBackgroundChange} />
+                    <input className="colorPaletteForBg" type="color" list="colorList"
+                        value={presentEditor.currentSlide?.background} onInput={handleSlideBackgroundChange} />
+                    <datalist id="colorList">
+                        <option value="#ff0000" label="Красный" />
+                        <option value="#008000" label="Зелёный" />
+                        <option value="#0000ff" label="Синий" />
+                    </datalist>
 
                     <p>Картинка</p>
-                    <input type="text" className="param_input_label" value={backgroundImage} onInput={handleSlideBackgroundImageChange} />
-
+                    <input type="text" className="param_input_label" value={presentEditor.currentSlide?.backgroundImage} onInput={handleSlideBackgroundImageChange} />
                     <button onClick={changeBg}>Применить</button>
                 </a>
             </li>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import updateTextContainer from "../../../../methods/updateContent/updateTextContainer";
 import Editor from "../../../../model/Editor";
@@ -14,16 +13,42 @@ export const TextStyle = ({ presentEditor, currentTextContainer }: updateTextCon
     const dispatch = useDispatch();
     const updateStateUpdatingTextContainer = (textContainer: TextContainer) => dispatch(addState(updateTextContainer(presentEditor, textContainer)));
 
-    const [activeClasNameForBold, setClassNameForBold] = useState('')
-    const [isBold, setBold] = useState(false);
-    const [activeClasNameForItalic, setClassNameForItalic] = useState('')
-    const [isItalic, setItalic] = useState(false);
-    const [activeClasNameForTextDecoration, setClassNameForTextDecoration] = useState('')
-    const [isUnderLine, setUnderLine] = useState(false);
+    let activeClasNameForBold = '';
+    let isBold = false;
+
+    let activeClasNameForItalic = '';
+    let isItalic = false;
+
+    let activeClasNameForTextDecoration = '';
+    let isUnderLine = false;
+
+    if (currentTextContainer.richText.fontWeight == 600) {
+        isBold = true;
+        activeClasNameForBold = 'active_tools_button'
+    } else {
+        isBold = false
+        activeClasNameForBold = ''
+    }
+
+    if (currentTextContainer.richText.textDecoration == 'underline') {
+        isUnderLine = true
+        activeClasNameForTextDecoration = 'active_tools_button'
+    } else {
+        isUnderLine = false
+        activeClasNameForTextDecoration = ''
+    }
+
+    if (currentTextContainer.richText.fontStyle == 'italic') {
+        isItalic = true    
+        activeClasNameForItalic = 'active_tools_button'
+    } else {
+        isItalic = false
+        activeClasNameForItalic = ''
+    }
 
     const handleBold = () => {
         if (isBold == true) {
-            setBold(false);
+            isBold = false;
             updateStateUpdatingTextContainer({
                 ...currentTextContainer,
                 richText: {
@@ -31,9 +56,9 @@ export const TextStyle = ({ presentEditor, currentTextContainer }: updateTextCon
                     fontWeight: 400
                 }
             });
-            setClassNameForBold("");
+            activeClasNameForBold = '';
         } else {
-            setBold(true);
+            isBold = true;
             updateStateUpdatingTextContainer({
                 ...currentTextContainer,
                 richText: {
@@ -41,13 +66,13 @@ export const TextStyle = ({ presentEditor, currentTextContainer }: updateTextCon
                     fontWeight: 600
                 }
             });
-            setClassNameForBold("active_tools_button");
+            activeClasNameForBold = "active_tools_button";
         }
     }
 
     const handleItalic = () => {
         if (isItalic == true) {
-            setItalic(false);
+            isItalic = false;
             updateStateUpdatingTextContainer({
                 ...currentTextContainer,
                 richText: {
@@ -55,9 +80,9 @@ export const TextStyle = ({ presentEditor, currentTextContainer }: updateTextCon
                     fontStyle: 'normal'
                 }
             });
-            setClassNameForItalic("");
+            activeClasNameForItalic = ''
         } else {
-            setItalic(true);
+            isItalic = true;
             updateStateUpdatingTextContainer({
                 ...currentTextContainer,
                 richText: {
@@ -65,13 +90,13 @@ export const TextStyle = ({ presentEditor, currentTextContainer }: updateTextCon
                     fontStyle: 'italic'
                 }
             });
-            setClassNameForItalic("active_tools_button");
+            activeClasNameForItalic = 'active_tools_button'
         }
     }
 
     const handleTextDecorration = () => {
         if (isUnderLine == true) {
-            setUnderLine(false);
+            isUnderLine = false;
             updateStateUpdatingTextContainer({
                 ...currentTextContainer,
                 richText: {
@@ -79,17 +104,17 @@ export const TextStyle = ({ presentEditor, currentTextContainer }: updateTextCon
                     textDecoration: 'none'
                 }
             });
-            setClassNameForTextDecoration("");
+            activeClasNameForTextDecoration = '';
         } else {
-            setUnderLine(true);
+            isUnderLine = true;
             updateStateUpdatingTextContainer({
                 ...currentTextContainer,
                 richText: {
                     ...currentTextContainer.richText,
                     textDecoration: 'underline'
                 }
-            });
-            setClassNameForTextDecoration("active_tools_button");
+            });  
+            activeClasNameForTextDecoration = 'active_tools_button'
         }
     }
 

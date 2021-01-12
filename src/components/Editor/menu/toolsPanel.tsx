@@ -8,6 +8,9 @@ import { ShapeTools } from "./shapeTools/shapeTools";
 import { TextTools } from "./textTools/textTools";
 import './toolsPanel.css'
 import { PresentationEl } from "./presentationName";
+import { Export } from "./file/export";
+import { Import } from "./file/import";
+
 
 export const ToolsPanel = () => {
     const dispatch = useDispatch();
@@ -17,7 +20,8 @@ export const ToolsPanel = () => {
             <h1 className="title"><PresentationEl /></h1>
             <div className="tools">
                 <div className="main_tools">
-                    <li><a href="#" className="tools_button">Файл</a></li>
+                    <Import />
+                    <Export />
                     <li><a href="#" className="tools_button" onClick={() => dispatch(undoState())}>Undo</a></li>
                     <li><a href="#" className="tools_button" onClick={() => dispatch(redoState())}>Redo</a></li>
                     <li><DeletingControl /></li>

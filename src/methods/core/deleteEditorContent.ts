@@ -6,6 +6,14 @@ export function deleteEditorContent(editor: Editor, content: Content | null): Ed
     if (!editor.currentSlide) return editor;
     const deleteSlideContent = deleteSlidesListContent(editor, content);
 
+    const slides = editor.currentPresentation.slides;
+    slides[editor.currentSlide.slideId] = {
+        ...editor.currentSlide,
+        contentList: {
+            ...deleteSlideContent
+        }
+    }
+
     return {
         ...editor,
         currentSlide: {
@@ -13,6 +21,10 @@ export function deleteEditorContent(editor: Editor, content: Content | null): Ed
             contentList: {
                 ...deleteSlideContent
             }
+        },
+        currentPresentation: {
+            ...editor.currentPresentation,
+            slides: slides
         }
     }
 }
