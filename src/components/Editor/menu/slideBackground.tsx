@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateSlideBackground } from "../../../methods/updateContent/updateSlideBackground";
 import { updateSlideBackgroundImage } from "../../../methods/updateContent/updateSlideBackgroundImage";

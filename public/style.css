@@ -215,18 +215,3 @@ li:hover .bg {
     font-family: 'Roboto';
     margin: 10px 0;
 }
-
-.slideBackground button {
-    margin: 20px 0 10px 0;
-    border: none;
-    color: #949494;
-    font-size: 16px;
-    border-radius: 4px;
-    font-family: 'Roboto';
-    padding: 5px;
-}
-
-.slideBackground button:hover {
-    background-color: #FDCE5D;
-    color: #0F4D82;
-}
