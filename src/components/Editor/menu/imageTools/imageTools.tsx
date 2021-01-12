@@ -14,7 +14,6 @@ export const Images: React.FC = () => {
 
     const getUpdateContentControlImageElements = (presentEditor: Editor) => {
         if (!presentEditor.currentContent) {
-            console.log('ssss');
             return
         };
         let content: Content = presentEditor.currentContent;
