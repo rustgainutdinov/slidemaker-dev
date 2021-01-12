@@ -9,13 +9,13 @@ export const Export = () => {
   const presentEditor: Editor = useSelector((state: RootState) => state.editorReducer.present);
   const [className, setClassName] = useState('');
   const [newEditor, setEditor] = useState(presentEditor);
-  let slideIndex = 0
-  const [slideShow, setSlideShow] = useState(0)
+  let slideIndex = 0;
+  const [slideShow, setSlideShow] = useState(0);
 
   const Save = () => {
     exportToJson(presentEditor);
     setClassName('');
-  }
+  };
 
   const openPreWatch = () => {
     if (className == '') {
@@ -23,23 +23,21 @@ export const Export = () => {
     } else {
       setClassName('');
     }
-
     setEditor(
       {
         ...newEditor,
         currentContent: newEditor.currentPresentation.slides[0].contentList[0],
         currentSlide: newEditor.currentPresentation.slides[0]
       }
-    )
-
+    );
     newEditor.currentPresentation.slides = {
       ...presentEditor.currentPresentation.slides
     }
-  }
+  };
 
   const closePreWatch = () => {
     setClassName('');
-  }
+  };
 
   const changeCurrentSlideIdInc = () => {
     slideIndex = slideShow;
@@ -51,9 +49,9 @@ export const Export = () => {
       ...newEditor,
       currentSlide: newEditor.currentPresentation.slides[slideIndex],
       currentContent: null
-    })
+    });
     setSlideShow(slideIndex)
-  }
+  };
   const changeCurrentSlideIdDec = () => {
     slideIndex = slideShow;
     if (slideIndex != 0) {
@@ -64,9 +62,9 @@ export const Export = () => {
       ...newEditor,
       currentSlide: newEditor.currentPresentation.slides[slideIndex],
       currentContent: null
-    })
+    });
     setSlideShow(slideIndex)
-  }
+  };
 
   const drawSlides =() => { 
     if (newEditor.currentSlide!=null) {
@@ -74,7 +72,7 @@ export const Export = () => {
         <SvgContentList slide={newEditor.currentSlide} width="100%" height="100%"/>
       )
     }
-  }
+  };
 
   return (
     <>
@@ -97,4 +95,4 @@ export const Export = () => {
       </div>
     </>
   )
-}
+};
