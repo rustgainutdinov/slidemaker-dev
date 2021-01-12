@@ -9,6 +9,7 @@ export function getDefaultTextContainer(): TextContainer {
         },
         uuid: generateUuid(),
         width: 400,
+        height: 400,
         richText: {
             color: '#000000', fontWeight: 600, fontFamily: 'Roboto',
             fontSize: 40, fontStyle: 'normal', value: 'Текст', textDecoration: 'none'

@@ -24,20 +24,21 @@ export const Contents: React.FC = () => {
 
     const drawContent = (content: Content) => {
         const onClickCallback = () => changeCurrentContentAction(content.uuid);
+        const isCurrent = editor.currentContent ? content.uuid === editor.currentContent.uuid : false;
         if (isCircle(content)) {
-            return <CircleEl circle={content} onCurrentElementChanged={onClickCallback.bind(content)} isCurrent={true}
+            return <CircleEl circle={content} onCurrentElementChanged={onClickCallback.bind(content)} isCurrent={isCurrent}
                              key={content.uuid}/>
         }
         if (isRectangle(content)) {
-            return <RectangleEl rectangle={content} isCurrent={true} key={content.uuid}
+            return <RectangleEl rectangle={content} isCurrent={isCurrent} key={content.uuid}
                                 onCurrentElementChanged={onClickCallback.bind(content)}/>
         }
         if (isTextContainer(content)) {
-            return <TextContainerEl textContainer={content} editor={editor} isCurrent={true}
-                                    onClick={onClickCallback.bind(content)} key={content.uuid}/>
+            return <TextContainerEl textContainer={content} editor={editor} isCurrent={isCurrent}
+                                    onCurrentElementChanged={onClickCallback.bind(content)} key={content.uuid}/>
         }
         if (isImage(content)) {
-            return <ImageEl image={content} isCurrent={true} onClick={onClickCallback.bind(content)}
+            return <ImageEl image={content} isCurrent={isCurrent} onClick={onClickCallback.bind(content)}
                             key={content.uuid}/>
         }
     };

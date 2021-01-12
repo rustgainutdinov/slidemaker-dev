@@ -56,7 +56,7 @@ export const Export = () => {
     }
     if (isTextContainer(content)) {
       return <TextContainerEl textContainer={content} editor={presentEditor} isCurrent={true}
-        onClick={onClickCallback.bind(content)} key={content.uuid} />
+                              onCurrentElementChanged={onClickCallback.bind(content)} key={content.uuid} />
     }
     if (isImage(content)) {
       return <ImageEl image={content} isCurrent={true} onClick={onClickCallback.bind(content)}

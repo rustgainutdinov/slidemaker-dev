@@ -57,12 +57,14 @@ export const SelectedOutline = ({children, width, height, position, changeSize, 
     };
 
     return <>
-        {isCurrent ? <rect style={outlineStyle}/> : null}
-        <Draggable getElCoordinates={getDotCoordinates} setFinalElCoordinates={setFinalDotCoordinates}
-                   setElCoordinates={setDotCoordinates}
-                   onDraggableStart={() => undefined}>
-            <rect style={resizeDotStyle}/>
-        </Draggable>
+        {isCurrent ? [
+            <rect style={outlineStyle} key={0}/>,
+            <Draggable getElCoordinates={getDotCoordinates} setFinalElCoordinates={setFinalDotCoordinates}
+                       setElCoordinates={setDotCoordinates} key={1}
+                       onDraggableStart={() => undefined}>
+                <rect style={resizeDotStyle}/>
+            </Draggable>
+        ] : null}
         {children}
     </>
 };

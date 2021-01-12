@@ -4,6 +4,10 @@ import Point from "../../../model/slide/content/Point";
 import {updateEditorContent} from "../../../methods/core/updateEditorContent";
 import {isCircle} from "../../../methods/typeGuardMethods/isCircle";
 import Circle from "../../../model/slide/content/shape/Circle";
+import {isRectangle} from "../../../methods/typeGuardMethods/isRectangle";
+import Rectangle from "../../../model/slide/content/shape/Rectangle";
+import {isTextContainer} from "../../../methods/typeGuardMethods/isTextContainer";
+import TextContainer from "../../../model/slide/content/TextContainer";
 
 export interface EditorState {
     past: Editor[],
@@ -16,6 +20,8 @@ export const UNDO = 'UNDO';
 export const REDO = 'REDO';
 export const CONTENT_POSITION_UPDATED = 'CONTENT_POSITION_UPDATED';
 export const CIRCLE_SIZE_UPDATED = 'CIRCLE_SIZE_UPDATED';
+export const RECTANGLE_SIZE_UPDATED = 'RECTANGLE_SIZE_UPDATED';
+export const TEXT_CONTAINER_SIZE_UPDATED = 'TEXT_CONTAINER_SIZE_UPDATED';
 
 
 interface AddStateAction {
@@ -41,12 +47,26 @@ interface UpdateCircleSizeStateAction {
     radiusOffset: number
 }
 
+interface UpdateRectangleSizeStateAction {
+    type: typeof RECTANGLE_SIZE_UPDATED
+    widthOffset: number,
+    heightOffset: number,
+}
+
+interface UpdateTextContainerSizeStateAction {
+    type: typeof TEXT_CONTAINER_SIZE_UPDATED
+    widthOffset: number,
+    heightOffset: number,
+}
+
 export type StateActions =
     AddStateAction
     | UndoStateAction
     | RedoStateAction
     | UpdateContentPositionStateAction
     | UpdateCircleSizeStateAction
+    | UpdateRectangleSizeStateAction
+    | UpdateTextContainerSizeStateAction;
 
 export function addState(editor: Editor): AddStateAction {
     return {
@@ -78,6 +98,22 @@ export function updateCircleSize(radiusOffset: number): UpdateCircleSizeStateAct
     return {
         type: CIRCLE_SIZE_UPDATED,
         radiusOffset,
+    }
+}
+
+export function updateRectangleSize(widthOffset: number, heightOffset: number): UpdateRectangleSizeStateAction {
+    return {
+        type: RECTANGLE_SIZE_UPDATED,
+        widthOffset,
+        heightOffset
+    }
+}
+
+export function updateTextContainerSize(widthOffset: number, heightOffset: number): UpdateTextContainerSizeStateAction {
+    return {
+        type: TEXT_CONTAINER_SIZE_UPDATED,
+        widthOffset,
+        heightOffset
     }
 }
 
@@ -117,6 +153,32 @@ export function editorReducer(
             return {
                 past: [state.present, ...state.past],
                 present: updateEditorContent(state.present, newCircle),
+                future: []
+            };
+        case RECTANGLE_SIZE_UPDATED:
+            if (!state.present.currentContent || !isRectangle(state.present.currentContent)) return state;
+            let newRectangle: Rectangle = {
+                ...state.present.currentContent,
+                rectangleSize: {
+                    width: state.present.currentContent.rectangleSize.width + action.widthOffset,
+                    height: state.present.currentContent.rectangleSize.height + action.heightOffset
+                }
+            };
+            return {
+                past: [state.present, ...state.past],
+                present: updateEditorContent(state.present, newRectangle),
+                future: []
+            };
+        case TEXT_CONTAINER_SIZE_UPDATED:
+            if (!state.present.currentContent || !isTextContainer(state.present.currentContent)) return state;
+            let newTextContainer: TextContainer = {
+                ...state.present.currentContent,
+                width: state.present.currentContent.width + action.widthOffset,
+                height: state.present.currentContent.height + action.heightOffset
+            };
+            return {
+                past: [state.present, ...state.past],
+                present: updateEditorContent(state.present, newTextContainer),
                 future: []
             };
         case UNDO:

@@ -3,6 +3,7 @@ import Content from "./Content"
 
 type TextContainer = Content & {
 	width: number,
+	height: number,
 	richText: RichText,
 	textContainer: undefined
 }
