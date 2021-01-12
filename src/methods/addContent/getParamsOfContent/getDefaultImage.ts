@@ -12,7 +12,7 @@ export function getDefaultImage(): Image {
             width: 300,
             height: 380
         },
-        url: "https://i.imgur.com/J6EWl6g.png",
+        url: "https://www.imgonline.com.ua/examples/bee-on-daisy.jpg",
         image: undefined,
         layer: 0
     };

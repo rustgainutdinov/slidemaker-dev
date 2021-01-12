@@ -9,7 +9,7 @@ describe('getDefaultImageTests', () => {
     });
 
     test('getDefaultImageUrlTests', () => {
-        expect(getDefaultImage().url).toBe('https://i.imgur.com/J6EWl6g.png')
+        expect(getDefaultImage().url).toBe('https://www.imgonline.com.ua/examples/bee-on-daisy.jpg')
     });
 
     test('getDefaultImageSizeTests', () => {

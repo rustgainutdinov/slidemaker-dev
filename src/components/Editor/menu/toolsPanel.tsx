@@ -10,6 +10,7 @@ import './toolsPanel.css'
 import { PresentationEl } from "./presentationName";
 import { Export } from "./file/export";
 import { Import } from "./file/import";
+import { Images } from "./imageTools/imageTools";
 
 
 export const ToolsPanel = () => {
@@ -30,6 +31,7 @@ export const ToolsPanel = () => {
                     </li>
                     <ControlEl />
                 </div>
+                <Images/>
                 <ShapeTools />
                 <TextTools />
             </div>
