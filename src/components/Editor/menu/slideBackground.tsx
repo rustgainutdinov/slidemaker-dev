@@ -5,6 +5,7 @@ import { updateSlideBackgroundImage } from "../../../methods/updateContent/updat
 import Editor from "../../../model/Editor";
 import { RootState } from "../../../store/Reducer";
 import { addState } from "../../../store/Reducer/editor";
+import { ColorPalette } from "./control/colorPalette";
 
 export const SlideBackgroundEl = () => {
     const dispatch = useDispatch();
@@ -45,12 +46,7 @@ export const SlideBackgroundEl = () => {
                     <p>Цвет Фона</p>
                     <input className="colorPaletteForBg" type="color" list="colorList"
                         value={presentEditor.currentSlide?.background} onInput={handleSlideBackgroundChange} />
-                    <datalist id="colorList">
-                        <option value="#ff0000" label="Красный" />
-                        <option value="#008000" label="Зелёный" />
-                        <option value="#0000ff" label="Синий" />
-                    </datalist>
-
+                    <ColorPalette />
                     <p>Картинка</p>
                     <input type="text" className="param_input_label" value={presentEditor.currentSlide?.backgroundImage} onInput={handleSlideBackgroundImageChange} />
                     <button onClick={changeBg}>Применить</button>

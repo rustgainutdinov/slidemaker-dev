@@ -4,6 +4,7 @@ import { updateContent } from "../../../../methods/updateContent/updateContent";
 import Editor from "../../../../model/Editor";
 import Shape from "../../../../model/slide/content/Shape";
 import { addState } from "../../../../store/Reducer/editor";
+import { ColorPalette } from "../control/colorPalette";
 
 type updateProps = {
     presentEditor: Editor, currentContent: Shape
@@ -55,11 +56,7 @@ export const ShapeBorder = ({ presentEditor, currentContent }: updateProps) => {
                     <svg id="mdi-border-color" className="shape_button" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.71,4.04C21.1,3.65 21.1,3 20.71,2.63L18.37,0.29C18,-0.1 17.35,-0.1 16.96,0.29L15,2.25L18.75,6M17.75,7L14,3.25L4,13.25V17H7.75L17.75,7Z" /></svg>
                     <div className="dropDown">
                         <input className="hidden" ref={selectRef} value={currentContent.border.color} type="color" onInput={handleBorderColorChange} list="colorList" />
-                        <datalist id="colorList">
-                            <option value="#ff0000" label="Красный" />
-                            <option value="#008000" label="Зелёный" />
-                            <option value="#0000ff" label="Синий" />
-                        </datalist>
+                        <ColorPalette />
                     </div>
                 </a>
             </li>

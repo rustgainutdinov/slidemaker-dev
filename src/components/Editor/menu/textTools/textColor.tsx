@@ -3,6 +3,7 @@ import updateTextContainer from "../../../../methods/updateContent/updateTextCon
 import Editor from "../../../../model/Editor";
 import TextContainer from "../../../../model/slide/content/TextContainer";
 import { addState } from "../../../../store/Reducer/editor";
+import { ColorPalette } from "../control/colorPalette";
 import './text.css';
 
 type updateTextContainerProps = {
@@ -27,11 +28,7 @@ export const ColorEl = ({ presentEditor, currentTextContainer }: updateTextConta
         <li>
             <input className="colorPalette" type="color" list="colorList"
             value={currentTextContainer.richText.color} onInput={handleSelectTextColor} />
-            <datalist id="colorList">
-                <option value="#ff0000" label="Красный" />
-                <option value="#008000" label="Зелёный" />
-                <option value="#0000ff" label="Синий" />
-            </datalist>
+            <ColorPalette />
         </li >
     )
 }
